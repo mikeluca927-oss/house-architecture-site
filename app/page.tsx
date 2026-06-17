@@ -144,7 +144,7 @@ export default function HomePage() {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.4em] uppercase text-gold mb-6">
-              Eastchester &middot; Westchester County, NY
+              Westchester County, NY
             </p>
             <h1 className="font-cormorant text-4xl md:text-7xl text-cream leading-tight mb-4">
               Westchester&rsquo;s Premier Architecture &amp; Construction Firm
