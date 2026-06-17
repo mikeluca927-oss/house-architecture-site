@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Dev Server",
+      "runtimeExecutable": "/tmp/node-v20.18.0-darwin-arm64/bin/node",
+      "runtimeArgs": ["/Users/mikeluca/Downloads/HAC/node_modules/.bin/next", "dev"],
+      "port": 3000
+    }
+  ]
+}

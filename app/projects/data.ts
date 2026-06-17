@@ -1,0 +1,197 @@
+const BASE = 'https://static.wixstatic.com/media'
+
+export interface Project {
+  name: string
+  location: string
+  slug: string
+  cover: string
+  images: string[]
+}
+
+export const projects: Project[] = [
+  {
+    name: 'Edgemont Contemporary',
+    location: 'Edgemont, NY',
+    slug: 'edgemont-contemporary',
+    cover: `${BASE}/156c65_c7fbaa78576f43e1971227717eec4476~mv2.jpeg`,
+    images: [
+      `${BASE}/156c65_c7fbaa78576f43e1971227717eec4476~mv2.jpeg`,
+      `${BASE}/156c65_10a51e54bd1b4b9e912e43072fdd316f~mv2.jpeg`,
+      `${BASE}/156c65_cd0130a6231d4db687d60cc2491b2a30~mv2.jpeg`,
+      `${BASE}/156c65_3b2ce5523ec84cff8ebb91cac888a82f~mv2.png`,
+      `${BASE}/156c65_ead72f34aa3a4de28186203eb2cae2d1~mv2.png`,
+      `${BASE}/156c65_0c76a614ab9e4fe18cb44144f5923b83~mv2.png`,
+      `${BASE}/156c65_c650a993d81d423b95c81d8a644160b6~mv2.png`,
+    ],
+  },
+  {
+    name: 'Heathcote Classic',
+    location: 'Scarsdale, NY',
+    slug: 'heathcote-classic',
+    cover: '/projects/heathcote-classic/1.webp',
+    images: [
+      '/projects/heathcote-classic/1.webp',
+      '/projects/heathcote-classic/2.webp',
+      '/projects/heathcote-classic/3.webp',
+      '/projects/heathcote-classic/4.webp',
+      '/projects/heathcote-classic/5.webp',
+      '/projects/heathcote-classic/6.webp',
+      '/projects/heathcote-classic/7.webp',
+      '/projects/heathcote-classic/8.webp',
+    ],
+  },
+  {
+    name: 'Scarsdale Transitional',
+    location: 'Scarsdale, NY',
+    slug: 'scarsdale-transitional',
+    cover: `${BASE}/156c65_9a776fc9aeae43969a654e26efbd034c~mv2.png`,
+    images: [
+      `${BASE}/156c65_9a776fc9aeae43969a654e26efbd034c~mv2.png`,
+      `${BASE}/156c65_f4148e946f0a4e478855800658850f58~mv2.png`,
+      `${BASE}/156c65_0e9c82feebeb429e9a5a5308de14b2f1~mv2.png`,
+      `${BASE}/156c65_55a17b8404e14d9eaffbbf272d943b0b~mv2.png`,
+      `${BASE}/156c65_6a08c2809c1f41b09b2b87a6d13d3c19~mv2.png`,
+      `${BASE}/156c65_10ea7f86d6b14ea285384ee4d1ecacc7~mv2.png`,
+    ],
+  },
+  {
+    name: 'Mamaroneck Center Hall',
+    location: 'Mamaroneck, NY',
+    slug: 'mamaroneck-center-hall',
+    cover: `${BASE}/156c65_23762c0e26ae45f9bc0d131577b0786d~mv2.png`,
+    images: [
+      `${BASE}/156c65_23762c0e26ae45f9bc0d131577b0786d~mv2.png`,
+      `${BASE}/156c65_cfe64e8559aa463e8c52b07482eaecf7~mv2.png`,
+      `${BASE}/156c65_6c413c0e729c4bd8af1284a6f2bb842d~mv2.png`,
+    ],
+  },
+  {
+    name: 'Julia Court Oasis',
+    location: 'Westchester, NY',
+    slug: 'julia-court-oasis',
+    cover: `${BASE}/156c65_a56033df2b994d94ae59b25913eb2c70~mv2.jpeg`,
+    images: [
+      `${BASE}/156c65_a56033df2b994d94ae59b25913eb2c70~mv2.jpeg`,
+      `${BASE}/156c65_4f2426b849c6492d9193eae434e8c54c~mv2.jpeg`,
+      `${BASE}/156c65_e2fccc7d34bd469fbd2f266983e80b02~mv2.jpeg`,
+      `${BASE}/156c65_5dd2b92c94b74261a1a7be9d942f2689~mv2.jpeg`,
+      `${BASE}/156c65_12e7f23b70c74a4584e9465ab5a4beba~mv2.png`,
+    ],
+  },
+  {
+    name: 'Stonewall "Gables"',
+    location: 'Westchester, NY',
+    slug: 'stonewall-gables',
+    cover: `${BASE}/156c65_5ef3b60093cf48e08dcee07dcec5fbbe~mv2.webp`,
+    images: [
+      `${BASE}/156c65_5ef3b60093cf48e08dcee07dcec5fbbe~mv2.webp`,
+      `${BASE}/156c65_d00bcbfbf7394371837ce4a6c4313e05~mv2.webp`,
+      `${BASE}/156c65_307f67b03c3c433c8f424a1cbf4a2bb1~mv2.webp`,
+      `${BASE}/156c65_48a6d035c1f1452e9085b1f6b4fc9ade~mv2.webp`,
+      `${BASE}/156c65_70709fd3fd0d4dff85c9085aab4c69a9~mv2.webp`,
+      `${BASE}/156c65_2f5254c0fab540b5a2c66ad702c97eb2~mv2.webp`,
+      `${BASE}/156c65_685dc0bb93ec445d87394d86e2ece009~mv2.webp`,
+    ],
+  },
+  {
+    name: 'Rye Colonial',
+    location: 'Rye, NY',
+    slug: 'rye-colonial',
+    cover: `${BASE}/156c65_5dc6d5fca2624a26ba553f3b0f78c2b0~mv2.png`,
+    images: [
+      `${BASE}/156c65_5dc6d5fca2624a26ba553f3b0f78c2b0~mv2.png`,
+      `${BASE}/156c65_eaa98325260742059c1ee585cd7774ea~mv2.png`,
+      `${BASE}/156c65_fd87d986535143c080b4d1aefcc20c55~mv2.png`,
+    ],
+  },
+  {
+    name: 'Mamaroneck Modern',
+    location: 'Mamaroneck, NY',
+    slug: 'mamaroneck-modern',
+    cover: `${BASE}/156c65_a96ec8007c6444f5abb654d1dc9b1989~mv2.png`,
+    images: [
+      `${BASE}/156c65_a96ec8007c6444f5abb654d1dc9b1989~mv2.png`,
+      `${BASE}/156c65_21fea21bc31542d99cfe4baae7ddbbd2~mv2.png`,
+      `${BASE}/156c65_332889da067d4132a78642bddae015b2~mv2.png`,
+      `${BASE}/156c65_6fa17cc1cb2a4c738183678ada4bb9da~mv2.png`,
+      `${BASE}/156c65_66cdcee3b5414374b03e8357c2c5eb75~mv2.png`,
+      `${BASE}/156c65_f4ff646da60b46c8bcd708c36dc62032~mv2.png`,
+      `${BASE}/156c65_21dd1f9723304630bc205a901f0ff636~mv2.png`,
+    ],
+  },
+  {
+    name: 'Scarsdale Tudor',
+    location: 'Scarsdale, NY',
+    slug: 'scarsdale-tudor',
+    cover: `${BASE}/156c65_fe8f5a8160ae4e6090d77b851436291e~mv2.png`,
+    images: [
+      `${BASE}/156c65_fe8f5a8160ae4e6090d77b851436291e~mv2.png`,
+      `${BASE}/156c65_be28a7c1a10a4a10aff5c8f7d75510ce~mv2.png`,
+      `${BASE}/156c65_871b6b3b6da24ecebe2ea1903c54d41c~mv2.png`,
+      `${BASE}/156c65_9aa90e9561484af5b8eb7d1726fc8ad8~mv2.png`,
+      `${BASE}/156c65_110b23d333a645edb3bf24c87bbddc59~mv2.png`,
+      `${BASE}/156c65_6d99d495a00a4d37b9ad5d9a9d7b0778~mv2.png`,
+      `${BASE}/156c65_edff68bef3f048a598b4bf289ab3f49d~mv2.png`,
+    ],
+  },
+  {
+    name: 'Eastchester Farmhouse',
+    location: 'Eastchester, NY',
+    slug: 'eastchester-farmhouse',
+    cover: `${BASE}/156c65_93feaa04ca7b494c9201c99ffcb481c7~mv2.jpeg`,
+    images: [
+      `${BASE}/156c65_93feaa04ca7b494c9201c99ffcb481c7~mv2.jpeg`,
+      `${BASE}/156c65_9ed431713e814b3b89be3517f773b2f6~mv2.jpeg`,
+      `${BASE}/156c65_4dc3082a5a724b9ab58007331b638edc~mv2.jpg`,
+    ],
+  },
+  {
+    name: 'Edgewood Colonial Addition',
+    location: 'Scarsdale, NY',
+    slug: 'edgewood-colonial-addition',
+    cover: `${BASE}/156c65_9485c952930e4f668cf5d72c04451687~mv2.jpeg`,
+    images: [
+      `${BASE}/156c65_9485c952930e4f668cf5d72c04451687~mv2.jpeg`,
+      `${BASE}/156c65_be82467756ad4b308a7f44c642ab4509~mv2.jpeg`,
+      `${BASE}/156c65_e8a05b39aa3b49fe9275ecd6eb4c3659~mv2.jpeg`,
+      `${BASE}/156c65_e062b0251c0a45c098b20f006ad4fa85~mv2.jpeg`,
+    ],
+  },
+  {
+    name: 'Eastchester Side Hall Colonial',
+    location: 'Eastchester, NY',
+    slug: 'eastchester-side-hall-colonial',
+    cover: `${BASE}/156c65_3869ecd5955a486a87ac8f6c2697193f~mv2.jpg`,
+    images: [
+      `${BASE}/156c65_3869ecd5955a486a87ac8f6c2697193f~mv2.jpg`,
+      `${BASE}/156c65_7ebf559faed34fa79ad8ee98745bf05b~mv2.png`,
+    ],
+  },
+  {
+    name: 'Scarsdale Mediterranean',
+    location: 'Scarsdale, NY',
+    slug: 'scarsdale-mediterranean',
+    cover: `${BASE}/156c65_03a05a1c8a544cdc9aeb7aac98f5e01b~mv2.jpeg`,
+    images: [
+      `${BASE}/156c65_03a05a1c8a544cdc9aeb7aac98f5e01b~mv2.jpeg`,
+      `${BASE}/156c65_da073378eef541779fa0922ae875d569~mv2.png`,
+      `${BASE}/156c65_fd4c1a53f6d94314bb6bc5f786cca550~mv2.png`,
+      `${BASE}/156c65_e5e8c2722fa94008995bbe157ca559fe~mv2.png`,
+    ],
+  },
+  {
+    name: 'Other Various Projects',
+    location: 'Westchester, NY',
+    slug: 'scarsdale-residence',
+    cover: `${BASE}/156c65_79feb46abdf04a4e99f98ca8fb0d78d7~mv2.png`,
+    images: [
+      `${BASE}/156c65_79feb46abdf04a4e99f98ca8fb0d78d7~mv2.png`,
+      `${BASE}/156c65_5857788860ef4f20a8c5f80d645f5524~mv2.png`,
+      `${BASE}/156c65_40c237f3a78c498fadb3cc0f8ea561e6~mv2.png`,
+      `${BASE}/156c65_3ea04151253643b2bdd34fdddbd072f0~mv2.jpeg`,
+      `${BASE}/156c65_3a036e4ff983428abad14bde6880b196~mv2.png`,
+      `${BASE}/156c65_5ac67bfeabe845d3b4ac7e4f1b140ae3~mv2.png`,
+      `${BASE}/156c65_6b371fa2ca8b44b0819658be8c53dd8a~mv2.png`,
+    ],
+  },
+]
