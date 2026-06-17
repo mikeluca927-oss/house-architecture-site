@@ -19,7 +19,7 @@ export default function ProjectGalleryPage({ params }: { params: { slug: string 
   return (
     <>
       {/* Header */}
-      <section className="pt-36 pb-12 bg-cream">
+      <section className="pt-28 md:pt-36 pb-8 md:pb-12 bg-cream">
         <div className="max-w-6xl mx-auto px-6">
           <Link
             href="/projects"
@@ -31,7 +31,7 @@ export default function ProjectGalleryPage({ params }: { params: { slug: string 
             All Projects
           </Link>
           <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-3">Portfolio</p>
-          <h1 className="font-cormorant text-5xl md:text-6xl text-charcoal mb-3">{project.name}</h1>
+          <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-3">{project.name}</h1>
           <p className="font-inter text-sm text-charcoal/50 tracking-wider">{project.location} — {project.images.length} Photos</p>
         </div>
       </section>

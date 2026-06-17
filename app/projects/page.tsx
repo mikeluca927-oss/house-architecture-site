@@ -7,11 +7,11 @@ import { projects } from './data'
 export default function ProjectsPage() {
   return (
     <>
-      <section className="pt-36 pb-16 bg-cream">
+      <section className="pt-28 md:pt-36 pb-12 md:pb-16 bg-cream">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-3">Portfolio</p>
-            <h1 className="font-cormorant text-5xl md:text-6xl text-charcoal mb-6">
+            <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-6">
               Westchester Architecture & Construction Projects
             </h1>
             <p className="font-inter text-lg text-charcoal/60 max-w-2xl">

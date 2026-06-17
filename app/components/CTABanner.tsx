@@ -14,13 +14,13 @@ export default function CTABanner({
   buttonText = 'Book a Free Consultation',
 }: CTABannerProps) {
   return (
-    <section className="bg-charcoal py-24" aria-label="Call to action">
+    <section className="bg-charcoal py-16 md:py-24" aria-label="Call to action">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <ScrollReveal>
-          <h2 className="font-cormorant text-4xl md:text-5xl text-cream mb-4 tracking-wide leading-tight">
+          <h2 className="font-cormorant text-3xl md:text-5xl text-cream mb-4 tracking-wide leading-tight">
             {headline}
           </h2>
-          <p className="font-inter text-cream/60 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">{subhead}</p>
+          <p className="font-inter text-cream/60 text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">{subhead}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link
               href="/contact"

@@ -146,7 +146,7 @@ export default function HomePage() {
             <p className="font-inter text-xs tracking-[0.4em] uppercase text-gold mb-6">
               Eastchester &middot; Westchester County, NY
             </p>
-            <h1 className="font-cormorant text-5xl md:text-7xl text-cream leading-tight mb-4">
+            <h1 className="font-cormorant text-4xl md:text-7xl text-cream leading-tight mb-4">
               Westchester&rsquo;s Premier Architecture &amp; Construction Firm
             </h1>
             <p className="font-inter text-lg md:text-xl text-cream/80 mb-3 tracking-wide">
@@ -170,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* About blurb */}
-      <section className="py-20 bg-cream">
+      <section className="py-14 md:py-20 bg-cream">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">
@@ -195,13 +195,13 @@ export default function HomePage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-charcoal/[0.03]" aria-labelledby="services-heading">
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]" aria-labelledby="services-heading">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-3 text-center">What We Do</p>
             <h2
               id="services-heading"
-              className="font-cormorant text-4xl md:text-5xl text-charcoal text-center mb-16 leading-tight"
+              className="font-cormorant text-3xl md:text-5xl text-charcoal text-center mb-10 md:mb-16 leading-tight"
             >
               Architecture &amp; Construction Services
             </h2>
@@ -211,7 +211,7 @@ export default function HomePage() {
               <ScrollReveal key={service.href} delay={i * 0.07}>
                 <Link
                   href={service.href}
-                  className="group block bg-cream p-10 hover:bg-charcoal/[0.025] transition-colors h-full"
+                  className="group block bg-cream p-6 md:p-10 hover:bg-charcoal/[0.025] transition-colors h-full"
                 >
                   <span className="text-gold mb-5 block">{service.icon}</span>
                   <h3 className="font-cormorant text-2xl text-charcoal mb-3 group-hover:text-gold transition-colors">
@@ -229,13 +229,13 @@ export default function HomePage() {
       </section>
 
       {/* Project Categories */}
-      <section className="py-24 bg-charcoal" aria-labelledby="projects-heading">
+      <section className="py-16 md:py-24 bg-charcoal" aria-labelledby="projects-heading">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-3">Our Work</p>
             <h2
               id="projects-heading"
-              className="font-cormorant text-4xl md:text-5xl text-cream mb-16 leading-tight"
+              className="font-cormorant text-3xl md:text-5xl text-cream mb-10 md:mb-16 leading-tight"
             >
               Featured Project Categories
             </h2>
@@ -250,7 +250,7 @@ export default function HomePage() {
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-8">
+                  <div className="absolute bottom-0 left-0 p-5 md:p-8">
                     <h3 className="font-cormorant text-3xl text-cream mb-2 leading-tight">{cat.title}</h3>
                     <p className="font-inter text-sm text-cream/60 mb-4">{cat.description}</p>
                     <span className="font-inter text-xs tracking-widest uppercase text-gold group-hover:translate-x-1 transition-transform block">
@@ -275,12 +275,12 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-cream" aria-labelledby="why-heading">
+      <section className="py-16 md:py-24 bg-cream" aria-labelledby="why-heading">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <h2
               id="why-heading"
-              className="font-cormorant text-4xl md:text-5xl text-charcoal text-center mb-16 leading-tight"
+              className="font-cormorant text-3xl md:text-5xl text-charcoal text-center mb-10 md:mb-16 leading-tight"
             >
               Why Choose House Architecture &amp; Construction
             </h2>
@@ -316,7 +316,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-charcoal/[0.03]" aria-labelledby="testimonials-heading">
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]" aria-labelledby="testimonials-heading">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <p

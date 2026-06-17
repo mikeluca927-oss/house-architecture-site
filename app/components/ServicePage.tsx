@@ -24,11 +24,11 @@ export default function ServicePage({
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-24 bg-cream">
+      <section className="pt-28 md:pt-36 pb-14 md:pb-24 bg-cream">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">Our Services</p>
-            <h1 className="font-cormorant text-5xl md:text-6xl text-charcoal mb-6 leading-tight">
+            <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-6 leading-tight">
               {headline}
             </h1>
             <p className="font-inter text-lg text-charcoal/60 leading-relaxed max-w-2xl">{intro}</p>
@@ -39,7 +39,7 @@ export default function ServicePage({
       <div className="border-t border-charcoal/10" />
 
       {/* Body Content */}
-      <section className="py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-cream">
         <div className="max-w-4xl mx-auto px-6">
           <div className="space-y-6">
             {body.map((paragraph, i) => (
@@ -64,7 +64,7 @@ export default function ServicePage({
 
       {/* Projects */}
       {projects.length > 0 && (
-        <section className="py-24 bg-charcoal/[0.03]">
+        <section className="py-16 md:py-24 bg-charcoal/[0.03]">
           <div className="max-w-6xl mx-auto px-6">
             <ScrollReveal>
               <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal mb-12">Featured Projects</h2>
@@ -81,7 +81,7 @@ export default function ServicePage({
       )}
 
       {/* Related Services */}
-      <section className="py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-cream">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <h2 className="font-cormorant text-3xl text-charcoal mb-8">Related Services</h2>

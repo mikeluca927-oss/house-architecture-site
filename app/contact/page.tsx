@@ -18,11 +18,11 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-16 bg-cream">
+      <section className="pt-28 md:pt-36 pb-12 md:pb-16 bg-cream">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">Get In Touch</p>
-            <h1 className="font-cormorant text-5xl md:text-6xl text-charcoal mb-6 leading-tight">
+            <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-6 leading-tight">
               Start Your Westchester Architecture Project
             </h1>
             <p className="font-inter text-lg text-charcoal/60 max-w-xl leading-relaxed">
@@ -37,7 +37,7 @@ export default function ContactPage() {
 
       {/* Contact Grid */}
       <section className="py-16 bg-cream">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-16">
           {/* Form */}
           <div className="lg:col-span-3">
             <ScrollReveal>

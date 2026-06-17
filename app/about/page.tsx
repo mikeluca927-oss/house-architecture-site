@@ -20,11 +20,11 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-24 bg-cream">
+      <section className="pt-28 md:pt-36 pb-14 md:pb-24 bg-cream">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">Our Story</p>
-            <h1 className="font-cormorant text-5xl md:text-6xl text-charcoal mb-6 leading-tight">
+            <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-6 leading-tight">
               About House Architecture &amp; Construction, PLLC
             </h1>
           </ScrollReveal>
@@ -34,7 +34,7 @@ export default function AboutPage() {
       <div className="border-t border-charcoal/10" />
 
       {/* Firm Story */}
-      <section className="py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-cream">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Process */}
-      <section className="py-24 bg-charcoal/[0.03]">
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <h2 className="font-cormorant text-4xl text-charcoal text-center mb-4">Our Process</h2>
@@ -112,7 +112,7 @@ export default function AboutPage() {
       </section>
 
       {/* Silvio Luca Bio */}
-      <section className="py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-cream">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <img
@@ -154,7 +154,7 @@ export default function AboutPage() {
       </section>
 
       {/* Project photos grid */}
-      <section className="py-24 bg-charcoal/[0.03]">
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <h2 className="font-cormorant text-3xl text-charcoal mb-12">Our Work</h2>
@@ -193,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 bg-cream" aria-labelledby="values-heading">
+      <section className="py-16 md:py-24 bg-cream" aria-labelledby="values-heading">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <h2
@@ -233,7 +233,7 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-24 bg-charcoal/[0.03]">
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-10 text-center">

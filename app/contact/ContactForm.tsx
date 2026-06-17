@@ -34,7 +34,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="border border-gold/30 p-12 text-center">
+      <div className="border border-gold/30 p-8 md:p-12 text-center">
         <div className="w-10 h-px bg-gold mx-auto mb-6" aria-hidden="true" />
         <p className="font-cormorant text-3xl text-charcoal mb-4">Thank You</p>
         <p className="font-inter text-charcoal/60 leading-relaxed">
