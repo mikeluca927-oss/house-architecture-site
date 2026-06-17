@@ -183,8 +183,9 @@ export const projects: Project[] = [
     name: 'Barry Colonial',
     location: 'Westchester, NY',
     slug: 'barry-colonial',
-    cover: '/projects/barry-colonial/1.jpg',
+    cover: '/projects/barry-colonial/4.jpg',
     images: [
+      '/projects/barry-colonial/4.jpg',
       '/projects/barry-colonial/1.jpg',
       '/projects/barry-colonial/2.jpg',
       '/projects/barry-colonial/3.jpg',
@@ -197,8 +198,9 @@ export const projects: Project[] = [
     name: 'Eastchester Colonial Revival',
     location: 'Eastchester, NY',
     slug: 'eastchester-colonial-revival',
-    cover: '/projects/eastchester-colonial-revival/1.jpg',
+    cover: '/projects/eastchester-colonial-revival/4.jpg',
     images: [
+      '/projects/eastchester-colonial-revival/4.jpg',
       '/projects/eastchester-colonial-revival/1.jpg',
       '/projects/eastchester-colonial-revival/2.jpg',
       '/projects/eastchester-colonial-revival/3.jpg',
