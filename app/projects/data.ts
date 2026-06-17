@@ -204,7 +204,6 @@ export const projects: Project[] = [
       '/projects/eastchester-colonial-revival/1.jpg',
       '/projects/eastchester-colonial-revival/2.jpg',
       '/projects/eastchester-colonial-revival/3.jpg',
-      '/projects/eastchester-colonial-revival/4.jpg',
     ],
   },
   {
