@@ -27,16 +27,16 @@ yarn-error.log*
 # vercel
 .vercel
 
-# loose media files in project root
-*.HEIC
-*.heic
-*.JPG
-*.jpg
-*.PNG
-*.png
-*.WEBP
-*.webp
-Screenshot*
-IMG_*
-Image*
+# loose media files in project root only (not public/)
+/*.HEIC
+/*.heic
+/*.JPG
+/*.jpg
+/*.PNG
+/*.png
+/*.WEBP
+/*.webp
+/Screenshot*
+/IMG_*
+/Image*
 .claude/
