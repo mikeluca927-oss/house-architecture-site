@@ -26,10 +26,13 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // Simulate network delay
-    await new Promise((r) => setTimeout(r, 600))
+    const res = await fetch('https://formspree.io/f/mqeoonzg', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(form),
+    })
     setLoading(false)
-    setSubmitted(true)
+    if (res.ok) setSubmitted(true)
   }
 
   if (submitted) {
