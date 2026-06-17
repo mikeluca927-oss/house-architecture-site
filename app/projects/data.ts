@@ -180,6 +180,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: 'Barry Colonial',
+    location: 'Westchester, NY',
+    slug: 'barry-colonial',
+    cover: '/projects/barry-colonial/1.jpg',
+    images: [
+      '/projects/barry-colonial/1.jpg',
+      '/projects/barry-colonial/2.jpg',
+      '/projects/barry-colonial/3.jpg',
+      '/projects/barry-colonial/4.jpg',
+      '/projects/barry-colonial/5.jpg',
+      '/projects/barry-colonial/6.jpg',
+    ],
+  },
+  {
+    name: 'Eastchester Colonial Revival',
+    location: 'Eastchester, NY',
+    slug: 'eastchester-colonial-revival',
+    cover: '/projects/eastchester-colonial-revival/1.jpg',
+    images: [
+      '/projects/eastchester-colonial-revival/1.jpg',
+      '/projects/eastchester-colonial-revival/2.jpg',
+      '/projects/eastchester-colonial-revival/3.jpg',
+      '/projects/eastchester-colonial-revival/4.jpg',
+    ],
+  },
+  {
     name: 'Other Various Projects',
     location: 'Westchester, NY',
     slug: 'scarsdale-residence',
@@ -192,6 +218,7 @@ export const projects: Project[] = [
       `${BASE}/156c65_3a036e4ff983428abad14bde6880b196~mv2.png`,
       `${BASE}/156c65_5ac67bfeabe845d3b4ac7e4f1b140ae3~mv2.png`,
       `${BASE}/156c65_6b371fa2ca8b44b0819658be8c53dd8a~mv2.png`,
+      '/projects/scarsdale-residence/1.jpg',
     ],
   },
 ]
