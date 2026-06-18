@@ -9,11 +9,29 @@ export const metadata: Metadata = {
   title: 'House Architecture & Construction, PLLC | Westchester NY Architect & Contractor',
   description:
     "Westchester County's premier residential architecture and construction firm. Custom homes, renovations, additions, kitchens, bathrooms, and more. Free consultations. Serving Eastchester, Scarsdale, Bronxville, and all of Westchester, NY.",
+  keywords: [
+    'architect Westchester NY',
+    'home architect Westchester County',
+    'residential architect Scarsdale NY',
+    'custom home builder Westchester',
+    'general contractor Westchester County NY',
+    'home renovation Westchester',
+    'home addition Westchester NY',
+    'kitchen remodel Westchester',
+    'bathroom remodel Westchester NY',
+    'new construction Westchester County',
+    'licensed architect New York',
+    'House Architecture Construction PLLC',
+    'Silvio Luca architect',
+    'Bronxville renovation contractor',
+    'Larchmont architect',
+  ],
   openGraph: {
     title: 'House Architecture & Construction, PLLC | Westchester NY Architect & Contractor',
     description:
       "Westchester County's premier residential architecture and construction firm. Custom homes, renovations, additions, and more.",
     url: 'https://www.housearchitecturepllc.com',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'House Architecture & Construction, PLLC — Westchester NY' }],
   },
   alternates: { canonical: 'https://www.housearchitecturepllc.com' },
 }

@@ -189,7 +189,6 @@ export const projects: Project[] = [
       '/projects/barry-colonial/1.jpg',
       '/projects/barry-colonial/2.jpg',
       '/projects/barry-colonial/3.jpg',
-      '/projects/barry-colonial/4.jpg',
       '/projects/barry-colonial/5.jpg',
       '/projects/barry-colonial/6.jpg',
     ],
