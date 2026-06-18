@@ -219,7 +219,7 @@ export default function HomePage() {
             >
               {Array(6).fill(null).map((_, i) => (
                 <span key={i} className="font-cormorant text-sm tracking-[0.4em] uppercase text-cream/20 flex-shrink-0">
-                  Community Designs Engineering D.P.C. &nbsp;·&nbsp; Westchester County &nbsp;·&nbsp; Residential Architecture &nbsp;·&nbsp; New York &nbsp;·&nbsp;
+                  House Architecture & Construction &nbsp;·&nbsp; Westchester County &nbsp;·&nbsp; Residential Architecture &nbsp;·&nbsp; New York &nbsp;·&nbsp;
                 </span>
               ))}
             </motion.div>
