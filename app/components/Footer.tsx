@@ -20,7 +20,6 @@ const seoLinks = [
   { label: 'Westchester Contractor', href: '/westchester-contractor-architecture' },
   { label: 'Westchester Home Remodeling', href: '/westchester-home-remodeling' },
   { label: 'Westchester Renovation', href: '/westchester-renovation-contractor' },
-  { label: 'Yonkers Contractor', href: '/yonkers-contractor' },
   { label: 'White Plains Architect', href: '/white-plains-architect' },
 ]
 

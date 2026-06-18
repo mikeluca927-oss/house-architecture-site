@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <h3 className="font-cormorant text-xl text-charcoal mb-3">Service Area</h3>
                   <p className="font-inter text-sm text-charcoal/55 leading-relaxed">
                     We serve homeowners throughout Westchester County, NY, including Eastchester, Scarsdale,
-                    Bronxville, Larchmont, White Plains, Yonkers, Pelham, New Rochelle, Tarrytown, and all
+                    Bronxville, Larchmont, White Plains, Pelham, New Rochelle, Tarrytown, and all
                     surrounding communities.
                   </p>
                 </div>

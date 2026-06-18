@@ -79,7 +79,7 @@ export default function NewConstructionPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.24}>
               <p className="font-inter text-charcoal/70 leading-relaxed text-lg">
-                We have built custom homes in Scarsdale, Bronxville, Larchmont, Yonkers, White Plains, Eastchester,
+                We have built custom homes in Scarsdale, Bronxville, Larchmont, White Plains, Eastchester,
                 and communities throughout Westchester County. Each home is a one-of-a-kind creation, designed for the
                 specific site and the specific family who will live there.
               </p>

@@ -95,8 +95,7 @@ export default function ArchitecturePage() {
             <ScrollReveal delay={0.24}>
               <p className="font-inter text-charcoal/70 leading-relaxed text-lg">
                 We have extensive experience navigating Westchester County&rsquo;s varied municipal approval processes
-                — including the distinct requirements of Eastchester, Scarsdale, Bronxville, Larchmont, White Plains,
-                and Yonkers. This local expertise means your project moves through the approval process efficiently.
+                — including the distinct requirements of Eastchester, Scarsdale, Bronxville, Larchmont, and White Plains. This local expertise means your project moves through the approval process efficiently.
               </p>
             </ScrollReveal>
           </div>

@@ -77,7 +77,7 @@ export default function AdditionsPage() {
               <p className="font-inter text-charcoal/70 leading-relaxed text-lg">
                 We handle all aspects of the addition process: architectural design, engineering coordination, permit
                 applications, and full construction management. We serve homeowners throughout Westchester County,
-                including Scarsdale, Bronxville, Larchmont, Eastchester, White Plains, and Yonkers.
+                including Scarsdale, Bronxville, Larchmont, Eastchester, and White Plains.
               </p>
             </ScrollReveal>
           </div>
