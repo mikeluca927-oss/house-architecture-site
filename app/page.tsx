@@ -1,541 +1,392 @@
-'use client'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
-import { useRef } from 'react'
+import ScrollReveal from './components/ScrollReveal'
+import CTABanner from './components/CTABanner'
+import TestimonialCard from './components/TestimonialCard'
 import CountUp from './components/CountUp'
 
-const WX = 'https://static.wixstatic.com/media'
+export const metadata: Metadata = {
+  title: 'House Architecture & Construction, PLLC | Westchester NY Architect & Contractor',
+  description:
+    "Westchester County's premier residential architecture and construction firm. Custom homes, renovations, additions, kitchens, bathrooms, and more. Free consultations. Serving Eastchester, Scarsdale, Bronxville, and all of Westchester, NY.",
+  keywords: [
+    'architect Westchester NY',
+    'home architect Westchester County',
+    'residential architect Scarsdale NY',
+    'custom home builder Westchester',
+    'general contractor Westchester County NY',
+    'home renovation Westchester',
+    'home addition Westchester NY',
+    'kitchen remodel Westchester',
+    'bathroom remodel Westchester NY',
+    'new construction Westchester County',
+    'licensed architect New York',
+    'House Architecture Construction PLLC',
+    'Silvio Luca architect',
+    'Bronxville renovation contractor',
+    'Larchmont architect',
+  ],
+  openGraph: {
+    title: 'House Architecture & Construction, PLLC | Westchester NY Architect & Contractor',
+    description:
+      "Westchester County's premier residential architecture and construction firm. Custom homes, renovations, additions, and more.",
+    url: 'https://www.housearchitectureandconstruction.com',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'House Architecture & Construction, PLLC — Westchester NY' }],
+  },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com' },
+}
 
-const projects = [
+const services = [
   {
-    title: 'Beech Street',
-    subtitle: 'Eastchester, NY',
-    description: 'We transformed a neglected home on an oversized lot into three single family dwellings — reinventing the potential of a forgotten parcel.',
-    hero: `${WX}/c78834_ea870e45f547401ea924d3f3aabea319~mv2_d_10000_4400_s_4_2.png/v1/fill/w_1600,h_700,al_c,q_85/image.png`,
-    gallery: [
-      `${WX}/c78834_71a41935c40d4feeb43a14203b81e54d~mv2_d_3876_1536_s_2.jpg/v1/fill/w_1200,h_700,al_c,q_85/image.jpg`,
-      `${WX}/c78834_55e4b438cb6c4abd8228cdb7b0d0eccc~mv2_d_1537_2049_s_2.jpg/v1/fill/w_800,h_1000,al_c,q_85/image.jpg`,
-    ],
-    category: 'New Construction',
-    year: '2023',
-    num: '01',
+    title: 'Architecture',
+    href: '/architecture',
+    description:
+      'Comprehensive architectural design services for new homes, additions, and full-scale renovations — from initial concept and 3D renderings through construction documents and permitting.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+        <path d="M5 35L20 8l15 27H5z" />
+        <path d="M13 35v-8h14v8" />
+      </svg>
+    ),
   },
   {
-    title: 'Rye Renovation',
-    subtitle: 'Rye, NY',
-    description: 'Our team redesigned a dark and dingy vacant home into a light-filled, sought-after design that breathes new life into the neighborhood.',
-    hero: `${WX}/c78834_24f02381cc6e458eadc986394427fe07~mv2_d_2049_1537_s_2.jpg/v1/fill/w_1600,h_1000,al_c,q_85/image.jpg`,
-    gallery: [
-      `${WX}/c78834_8fa80a90caba45c39a9a40bda1f23d56~mv2_d_2049_1537_s_2.jpg/v1/fill/w_1200,h_900,al_c,q_85/image.jpg`,
-      `${WX}/c78834_ffbdf1d4a2bb4a3a97a2810b768f5ccd~mv2.png/v1/fill/w_800,h_800,al_c,q_85/image.png`,
-    ],
-    category: 'Renovation',
-    year: '2022',
-    num: '02',
+    title: 'New Construction',
+    href: '/new-construction',
+    description:
+      'Complete ground-up custom home construction on vacant lots — from site planning and architectural design through project management, construction, and final walkthrough.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+        <rect x="5" y="20" width="30" height="15" />
+        <path d="M5 20L20 8l15 12" />
+        <path d="M16 35V26h8v9" />
+      </svg>
+    ),
   },
   {
-    title: 'Scarsdale Home',
-    subtitle: 'Scarsdale, NY',
-    description: 'Demolition of an existing structure paved the way for a new design by our team to come to life — a clean, contemporary residence.',
-    hero: `${WX}/c78834_c1467462af134af68039f638fdd2859a~mv2_d_4800_3600_s_4_2.png/v1/fill/w_1600,h_1200,al_c,q_85/image.png`,
-    gallery: [
-      `${WX}/c78834_8e45da8201e94db9923246dc8414d447~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85/image.jpg`,
-      `${WX}/c78834_2912555d87214d1faa72f54a86c56f61~mv2_d_2049_1537_s_2.jpg/v1/fill/w_1200,h_900,al_c,q_85/image.jpg`,
-    ],
-    category: 'New Construction',
-    year: '2023',
-    num: '03',
+    title: 'Renovations',
+    href: '/renovations',
+    description:
+      'Full-scale home renovations transforming entire floors, wings, or whole residences. We coordinate every trade from structural work to finishes for a seamless result.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+        <rect x="6" y="6" width="28" height="28" rx="1" />
+        <path d="M6 16h28M16 6v28" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Additions',
+    href: '/additions',
+    description:
+      'Thoughtfully designed home additions — second stories, primary suite expansions, full floor additions — engineered to integrate seamlessly with your home\'s existing architecture.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+        <rect x="4" y="14" width="20" height="22" />
+        <rect x="24" y="20" width="12" height="16" />
+        <path d="M20 14v22" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Restorations',
+    href: '/restorations',
+    description:
+      'Expert preservation and restoration of historic and period homes, restoring original character and architectural integrity while upgrading systems and finishes throughout.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+        <circle cx="20" cy="20" r="13" />
+        <circle cx="20" cy="20" r="6" />
+        <path d="M20 7v6M20 27v6M7 20h6M27 20h6" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Interior Spaces',
+    href: '/living-areas',
+    description:
+      'Complete interior fit-outs for kitchens, bathrooms, living areas, and bedrooms — designed and built as part of a whole-floor or whole-home scope.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+        <rect x="4" y="4" width="32" height="32" rx="1" />
+        <path d="M4 18h32M18 4v14" />
+        <rect x="22" y="22" width="10" height="10" />
+      </svg>
+    ),
   },
 ]
 
-const team = [
+const projectCategories = [
   {
-    name: 'Adamo Maiorano',
-    role: 'Architect',
-    credential: 'New York Institute of Technology',
-    bio: 'At a young age, Adamo discovered his love of architecture. After pursuing his degree at NYIT and gaining invaluable experience at local firms throughout Westchester County, he co-founded Community Designs Engineering with his brother Marco.',
-    img: `${WX}/c78834_e61dce0ca09141ea9d18247a061d87e3~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/image.jpg`,
+    title: 'Kitchens',
+    href: '/kitchens',
+    description: 'Custom kitchens designed as part of full-scale home projects',
+    img: 'https://static.wixstatic.com/media/156c65_ed6b3e05306d4115a70d2f7cb6b53c73~mv2.jpg',
   },
   {
-    name: 'Marco Maiorano',
-    role: 'Professional Engineer',
-    credential: 'Manhattan College — Civil Engineering',
-    bio: "Marco's background in Professional Engineering allowed the brothers to pursue the development of this firm together. His expertise in civil engineering ensures every structure is as sound as it is beautiful.",
-    img: `${WX}/c78834_26b8b90d598d4c85bc77ee2790ea8fd6~mv2_d_1365_1365_s_2.jpg/v1/fill/w_800,h_800,al_c,q_85/image.jpg`,
+    title: 'Bathrooms',
+    href: '/bathrooms',
+    description: 'Luxury bathrooms built to the highest standard',
+    img: 'https://static.wixstatic.com/media/156c65_f0f7a6665fd64123afbc4c377f98eaee~mv2.png',
+  },
+  {
+    title: 'Bedrooms',
+    href: '/bedrooms',
+    description: 'Primary suites and bedroom renovations designed for comfort',
+    img: 'https://static.wixstatic.com/media/156c65_671bc7b162414601b06c197ac0db6f04~mv2.png',
+  },
+  {
+    title: 'Living Areas',
+    href: '/living-areas',
+    description: 'Open, thoughtfully designed living spaces for everyday life',
+    img: 'https://static.wixstatic.com/media/156c65_7f68921c1cee4125bcf39463e4257038~mv2.jpg',
   },
 ]
-
-const stats = [
-  { value: 99, suffix: '+', label: 'Homes Transformed', duration: 2400 },
-  { value: 25, suffix: '+', label: 'Years of Experience', duration: 1800 },
-  { value: 100, suffix: '%', label: 'Residential Focus', duration: 2000 },
-  { value: 5, suffix: '★', label: 'Client Satisfaction', duration: 1200 },
-]
-
-function ParallaxImage({ src, alt }: { src: string; alt: string }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
-  const smoothY = useSpring(y, { stiffness: 80, damping: 25 })
-
-  return (
-    <div ref={ref} className="relative w-full h-full overflow-hidden">
-      <motion.div style={{ y: smoothY }} className="absolute inset-[-10%] w-[120%] h-[120%]">
-        <img src={src} alt={alt} className="w-full h-full object-cover" />
-      </motion.div>
-    </div>
-  )
-}
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
-  }),
-}
-
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-}
 
 export default function HomePage() {
-  const heroRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
-  const heroY = useTransform(heroScroll, [0, 1], ['0%', '30%'])
-  const heroOpacity = useTransform(heroScroll, [0, 0.6], [1, 0])
-
   return (
     <>
-      {/* ── HERO ── */}
-      <section ref={heroRef} className="relative h-screen min-h-[640px] flex flex-col items-start justify-end overflow-hidden" aria-label="Hero">
-        <motion.div style={{ y: heroY }} className="absolute inset-0">
-          <Image
-            src={`${WX}/c78834_11237d10674b4a1dbf43b116d777cc1a~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01/image.jpg`}
-            alt="Community Designs Engineering — Westchester, NY architecture"
-            fill
-            className="object-cover"
-            priority
-            unoptimized
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-charcoal/10" />
-
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-20 md:pb-28"
-        >
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="font-inter text-[10px] tracking-[0.5em] uppercase text-gold mb-5"
-          >
-            Lower Westchester, New York
-          </motion.p>
-
-          <div className="overflow-hidden mb-3">
-            <motion.h1
-              initial={{ y: '100%' }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="font-cormorant text-6xl md:text-8xl lg:text-[10rem] text-cream leading-none font-light"
-            >
-              Design That
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden mb-8">
-            <motion.h1
-              initial={{ y: '100%' }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="font-cormorant text-6xl md:text-8xl lg:text-[10rem] text-cream leading-none font-light italic"
-            >
-              Builds Community
-            </motion.h1>
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-inter text-sm md:text-base text-cream/60 mb-10 max-w-lg leading-relaxed"
-          >
-            An influential design engineering firm planning and designing inspirational structures with people in mind.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <Link
-              href="/#projects"
-              className="group inline-flex items-center gap-3 bg-gold text-white font-inter text-[11px] tracking-[0.3em] uppercase px-8 py-4 hover:bg-gold/90 transition-all duration-300"
-            >
-              View Our Work
-              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </Link>
+      {/* Hero */}
+      <section
+        className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden"
+        aria-label="Hero"
+      >
+        <Image
+          src="https://static.wixstatic.com/media/156c65_9a776fc9aeae43969a654e26efbd034c~mv2.png"
+          alt="Custom home architecture and construction in Westchester County NY by House Architecture & Construction PLLC"
+          fill
+          className="object-cover"
+          priority
+          unoptimized
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-charcoal/70" />
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="font-inter text-xs tracking-[0.4em] uppercase text-gold mb-6">
+              Westchester County, NY
+            </p>
+            <h1 className="font-cormorant text-4xl md:text-7xl text-cream leading-tight mb-4">
+              Westchester&rsquo;s Premier Architecture &amp; Construction Firm
+            </h1>
+            <p className="font-inter text-lg md:text-xl text-cream/80 mb-3 tracking-wide">
+              From Conception to Completion
+            </p>
+            <p className="font-inter text-base text-cream/60 mb-10">
+              Master Craftsmanship &middot; Timeless Detail &middot; Modern Functionality
+            </p>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 border border-cream/30 text-cream font-inter text-[11px] tracking-[0.3em] uppercase px-8 py-4 hover:border-gold hover:text-gold transition-all duration-300"
+              className="inline-block bg-gold text-white font-inter text-xs tracking-[0.25em] uppercase px-10 py-4 hover:bg-gold/90 transition-colors"
             >
-              Start a Project
-              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              Book a Free Consultation
             </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* Animated scroll line */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-10 right-10 hidden md:flex flex-col items-center gap-3"
-          aria-hidden="true"
-        >
-          <motion.div
-            animate={{ scaleY: [0, 1, 0], originY: 0 }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-16 bg-cream/30"
-          />
-          <p className="font-inter text-[9px] tracking-[0.4em] uppercase text-cream/30">Scroll</p>
-        </motion.div>
+          </ScrollReveal>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" aria-hidden="true">
+          <div className="w-px h-12 bg-cream/30" />
+          <p className="font-inter text-[10px] tracking-[0.3em] uppercase text-cream/40">Scroll</p>
+        </div>
       </section>
 
-      {/* ── STATS / COUNTER SECTION ── */}
-      <section className="py-0 bg-charcoal overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          {/* Marquee */}
-          <div className="border-b border-cream/10 py-5 overflow-hidden">
-            <motion.div
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="flex gap-12 whitespace-nowrap"
-            >
-              {Array(6).fill(null).map((_, i) => (
-                <span key={i} className="font-cormorant text-sm tracking-[0.4em] uppercase text-cream/20 flex-shrink-0">
-                  House Architecture & Construction &nbsp;·&nbsp; Westchester County &nbsp;·&nbsp; Residential Architecture &nbsp;·&nbsp; New York &nbsp;·&nbsp;
-                </span>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Counter grid */}
+      {/* Stats */}
+      <section className="bg-charcoal py-12 md:py-16">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-cream/10">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="py-12 px-6 md:px-10 text-center group"
-              >
-                <div className="font-cormorant font-light leading-none mb-3 flex items-end justify-center">
+            {[
+              { value: 99, suffix: '+', label: 'Homes Transformed', duration: 2400 },
+              { value: 25, suffix: '+', label: 'Years of Experience', duration: 1800 },
+              { value: 100, suffix: '%', label: 'Residential Focus', duration: 2000 },
+              { value: 5, suffix: '★', label: 'Client Satisfaction', duration: 1200 },
+            ].map((stat, i) => (
+              <div key={stat.label} className="py-10 px-6 text-center">
+                <div className="font-cormorant font-light leading-none mb-2 flex items-end justify-center">
                   <CountUp
                     end={stat.value}
                     suffix={stat.suffix}
                     duration={stat.duration}
-                    className="text-6xl md:text-8xl text-cream tabular-nums"
+                    className="text-5xl md:text-7xl text-cream tabular-nums"
                   />
                 </div>
-                <p className="font-inter text-[10px] tracking-[0.35em] uppercase text-gold">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ABOUT ── */}
-      <section className="py-28 md:py-44 bg-cream overflow-hidden" id="about">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-28 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: '-80px' }}
-              variants={stagger}
-            >
-              <motion.p variants={fadeUp} custom={0} className="font-inter text-[10px] tracking-[0.4em] uppercase text-gold mb-6">
-                About the Firm
-              </motion.p>
-              <motion.h2 variants={fadeUp} custom={0.05} className="font-cormorant text-4xl md:text-6xl text-charcoal leading-tight mb-8 font-light">
-                Architecture<br />With Purpose
-              </motion.h2>
-              <motion.p variants={fadeUp} custom={0.1} className="font-inter text-base text-charcoal/55 leading-relaxed mb-5">
-                Community Designs Engineering D.P.C. was founded by brothers Adamo and Marco Maiorano — combining architecture and civil engineering under one roof. The firm focuses primarily on residential design in Westchester County.
-              </motion.p>
-              <motion.p variants={fadeUp} custom={0.15} className="font-inter text-base text-charcoal/55 leading-relaxed mb-10">
-                With each project, the ideas and dreams of clients are realized, making homes into places for memories. Every design is crafted to enhance not only the client's space, but the community as a whole — both aesthetically and environmentally.
-              </motion.p>
-              <motion.div variants={fadeUp} custom={0.2}>
-                <Link
-                  href="/#team"
-                  className="font-inter text-[11px] tracking-[0.3em] uppercase text-charcoal border-b border-charcoal/20 pb-1 hover:text-gold hover:border-gold transition-colors"
-                >
-                  Meet the Team →
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/5] overflow-hidden"
-            >
-              <ParallaxImage
-                src={`${WX}/c78834_e61dce0ca09141ea9d18247a061d87e3~mv2.jpg/v1/fill/w_900,h_1100,al_c,q_85/image.jpg`}
-                alt="Adamo Maiorano — Architect"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoal/70 to-transparent p-8">
-                <p className="font-cormorant text-xl text-cream">Adamo Maiorano</p>
-                <p className="font-inter text-xs tracking-widest uppercase text-gold">Architect, Co-Founder</p>
+                <p className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold mt-2">{stat.label}</p>
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROJECTS ── */}
-      <section className="py-28 md:py-40 bg-white" id="projects">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={stagger}
-            className="flex items-end justify-between mb-20"
-          >
-            <div>
-              <motion.p variants={fadeUp} className="font-inter text-[10px] tracking-[0.4em] uppercase text-gold mb-4">
-                Recent Work
-              </motion.p>
-              <motion.h2 variants={fadeUp} className="font-cormorant text-4xl md:text-6xl text-charcoal font-light leading-tight">
-                Featured Projects
-              </motion.h2>
-            </div>
-            <motion.p variants={fadeUp} className="hidden md:block font-inter text-xs text-charcoal/35 max-w-xs text-right leading-relaxed">
-              Residential design across Westchester County, New York
-            </motion.p>
-          </motion.div>
-
-          <div className="space-y-3">
-            {projects.map((project, i) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 1, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative overflow-hidden cursor-pointer"
-              >
-                {/* Main hero image */}
-                <div className="relative overflow-hidden" style={{ aspectRatio: i === 0 ? '21/9' : '16/7' }}>
-                  <motion.div
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-0"
-                  >
-                    <img
-                      src={project.hero}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-charcoal/75 via-charcoal/20 to-transparent" />
-
-                  <div className="absolute bottom-0 left-0 p-8 md:p-12">
-                    <motion.p
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 + 0.3 }}
-                      className="font-inter text-[9px] tracking-[0.4em] uppercase text-gold mb-2"
-                    >
-                      {project.category} · {project.year}
-                    </motion.p>
-                    <motion.h3
-                      initial={{ opacity: 0, y: 15 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.7, delay: i * 0.1 + 0.4 }}
-                      className="font-cormorant text-4xl md:text-6xl text-cream font-light leading-none mb-1"
-                    >
-                      {project.title}
-                    </motion.h3>
-                    <p className="font-inter text-xs tracking-widest text-cream/50 uppercase mb-4">
-                      {project.subtitle}
-                    </p>
-                    <p className="font-inter text-sm text-cream/70 leading-relaxed max-w-md hidden md:block">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <div className="absolute top-8 right-10 font-cormorant text-9xl text-cream/8 font-light leading-none select-none">
-                    {project.num}
-                  </div>
-                </div>
-
-                {/* Gallery strip */}
-                <div className="grid grid-cols-2 gap-1 mt-1">
-                  {project.gallery.map((img, j) => (
-                    <div key={j} className="relative overflow-hidden" style={{ aspectRatio: '16/7' }}>
-                      <motion.div
-                        whileHover={{ scale: 1.06 }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="absolute inset-0"
-                      >
-                        <img src={img} alt={`${project.title} — view ${j + 1}`} className="w-full h-full object-cover" />
-                      </motion.div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── PHILOSOPHY STRIP ── */}
-      <section className="py-24 bg-charcoal overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <p className="font-cormorant text-3xl md:text-5xl lg:text-6xl text-cream/80 font-light leading-relaxed text-center max-w-4xl mx-auto">
-              "We treat each client and project as if they were our own. Come join the{' '}
-              <motion.span
-                className="text-gold italic"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
-                Community.
-              </motion.span>
-              "
+      {/* About blurb */}
+      <section className="py-14 md:py-20 bg-cream">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <ScrollReveal>
+            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">
+              House Architecture &amp; Construction, PLLC &mdash; Proudly Servicing Westchester and Surrounding Areas
             </p>
-            <div className="text-center mt-10">
+            <p className="font-cormorant text-2xl md:text-3xl text-charcoal leading-relaxed">
+              We are a licensed architecture and construction firm delivering full-service residential projects
+              throughout Westchester County. From architectural design and permitting to complete construction
+              management, we handle every phase — whether you&rsquo;re building from the ground up, transforming an
+              entire floor, or undertaking a full-scale renovation. From conception to completion, under one roof.
+            </p>
+            <div className="mt-8">
               <Link
-                href="/contact"
-                className="font-inter text-[11px] tracking-[0.35em] uppercase text-cream/40 border-b border-cream/15 pb-1 hover:text-gold hover:border-gold transition-colors"
+                href="/about"
+                className="font-inter text-sm tracking-widest uppercase text-charcoal/60 hover:text-gold transition-colors border-b border-charcoal/20 pb-1"
               >
-                Give us a call →
+                More About Us &rarr;
               </Link>
             </div>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ── TEAM ── */}
-      <section className="py-28 md:py-44 bg-cream overflow-hidden" id="team">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={stagger}
-            className="mb-20"
-          >
-            <motion.p variants={fadeUp} className="font-inter text-[10px] tracking-[0.4em] uppercase text-gold mb-4">
-              The People Behind the Work
-            </motion.p>
-            <motion.h2 variants={fadeUp} className="font-cormorant text-4xl md:text-6xl text-charcoal font-light leading-tight">
-              Meet the Team
-            </motion.h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.9, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group"
-              >
-                <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-0"
-                  >
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="absolute inset-0 bg-charcoal/20"
-                    whileHover={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                <div className="px-1">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3 className="font-cormorant text-3xl text-charcoal font-light">{member.name}</h3>
-                    <span className="font-inter text-[9px] tracking-[0.3em] uppercase text-gold">{member.role}</span>
-                  </div>
-                  <p className="font-inter text-xs tracking-wide text-charcoal/35 mb-4 uppercase">{member.credential}</p>
-                  <p className="font-inter text-sm text-charcoal/55 leading-relaxed">{member.bio}</p>
-                </div>
-              </motion.div>
+      {/* Services Grid */}
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]" aria-labelledby="services-heading">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-3 text-center">What We Do</p>
+            <h2
+              id="services-heading"
+              className="font-cormorant text-3xl md:text-5xl text-charcoal text-center mb-10 md:mb-16 leading-tight"
+            >
+              Architecture &amp; Construction Services
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-charcoal/10">
+            {services.map((service, i) => (
+              <ScrollReveal key={service.href} delay={i * 0.07}>
+                <Link
+                  href={service.href}
+                  className="group block bg-cream p-6 md:p-10 hover:bg-charcoal/[0.025] transition-colors h-full"
+                >
+                  <span className="text-gold mb-5 block">{service.icon}</span>
+                  <h3 className="font-cormorant text-2xl text-charcoal mb-3 group-hover:text-gold transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="font-inter text-sm text-charcoal/55 leading-relaxed mb-6">{service.description}</p>
+                  <span className="font-inter text-xs tracking-widest uppercase text-gold block group-hover:translate-x-1 transition-transform">
+                    Learn More &rarr;
+                  </span>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="relative py-40 overflow-hidden" aria-label="Call to action">
-        <div className="absolute inset-0">
-          <ParallaxImage
-            src={`${WX}/c78834_c1467462af134af68039f638fdd2859a~mv2_d_4800_3600_s_4_2.png/v1/fill/w_1920,h_900,al_c,q_85/image.png`}
-            alt="Scarsdale elevation design"
-          />
-        </div>
-        <div className="absolute inset-0 bg-charcoal/82" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-10 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={stagger}
-          >
-            <motion.p variants={fadeUp} className="font-inter text-[10px] tracking-[0.4em] uppercase text-gold mb-6">
-              Ready to Build
-            </motion.p>
-            <motion.h2 variants={fadeUp} className="font-cormorant text-5xl md:text-7xl text-cream font-light leading-tight mb-6">
-              Let's Design Something<br />Worth Building
-            </motion.h2>
-            <motion.p variants={fadeUp} className="font-inter text-sm text-cream/50 mb-12 leading-relaxed max-w-xl mx-auto">
-              Contact Community Designs Engineering D.P.C. to discuss your next residential project in Westchester County.
-            </motion.p>
-            <motion.div variants={fadeUp}>
+      {/* Project Categories */}
+      <section className="py-16 md:py-24 bg-charcoal" aria-labelledby="projects-heading">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-3">Our Work</p>
+            <h2
+              id="projects-heading"
+              className="font-cormorant text-3xl md:text-5xl text-cream mb-10 md:mb-16 leading-tight"
+            >
+              Featured Project Categories
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projectCategories.map((cat, i) => (
+              <ScrollReveal key={cat.href} delay={i * 0.1}>
+                <Link href={cat.href} className="group relative block aspect-video overflow-hidden">
+                  <img
+                    src={cat.img}
+                    alt={`${cat.title} by House Architecture & Construction in Westchester County NY`}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-5 md:p-8">
+                    <h3 className="font-cormorant text-3xl text-cream mb-2 leading-tight">{cat.title}</h3>
+                    <p className="font-inter text-sm text-cream/60 mb-4">{cat.description}</p>
+                    <span className="font-inter text-xs tracking-widest uppercase text-gold group-hover:translate-x-1 transition-transform block">
+                      View Projects &rarr;
+                    </span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={0.4}>
+            <div className="text-center mt-12">
               <Link
-                href="/contact"
-                className="group inline-flex items-center gap-3 bg-gold text-white font-inter text-[11px] tracking-[0.3em] uppercase px-12 py-5 hover:bg-gold/90 transition-all duration-300"
+                href="/projects"
+                className="inline-block border border-cream/25 text-cream font-inter text-xs tracking-[0.2em] uppercase px-10 py-4 hover:border-gold hover:text-gold transition-colors"
               >
-                Get in Touch
-                <motion.span
-                  className="inline-block"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  →
-                </motion.span>
+                View All Projects
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24 bg-cream" aria-labelledby="why-heading">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <h2
+              id="why-heading"
+              className="font-cormorant text-3xl md:text-5xl text-charcoal text-center mb-10 md:mb-16 leading-tight"
+            >
+              Why Choose House Architecture &amp; Construction
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                title: 'Free In-Home Consultations',
+                description:
+                  'We offer in-home consultations to help you turn your vision into reality. Our experts will come to your home to assess your needs and provide recommendations for your project.',
+              },
+              {
+                title: 'Licensed & Insured',
+                description:
+                  'We are fully licensed and insured to give you peace of mind knowing that your project is in good hands throughout every phase of design and construction.',
+              },
+              {
+                title: 'Architecture + Construction Under One Roof',
+                description:
+                  'Whether you need architectural plans, construction services, or a complete design-build solution, our team can assist with any phase of your project.',
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.15}>
+                <div className="text-center">
+                  <div className="w-10 h-px bg-gold mx-auto mb-6" aria-hidden="true" />
+                  <h3 className="font-cormorant text-2xl text-charcoal mb-4">{item.title}</h3>
+                  <p className="font-inter text-sm text-charcoal/55 leading-relaxed">{item.description}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 md:py-24 bg-charcoal/[0.03]" aria-labelledby="testimonials-heading">
+        <div className="max-w-4xl mx-auto px-6">
+          <ScrollReveal>
+            <p
+              className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-10 text-center"
+              id="testimonials-heading"
+            >
+              Client Stories
+            </p>
+          </ScrollReveal>
+          <div className="space-y-8">
+            <TestimonialCard
+              quote="We are a month or two away from moving into our dream home, built from the ground up on a vacant lot. Silvio has been integral in the design and inspiration for the home — but also in the execution of the process. The day to day management of a project of this size is no easy task. He has been flawless in assisting us in selecting the right subs, the timeliness of the process, to choosing the best materials. His eye for details and perfection are unmatched. Silvio treats every detail as if he's doing it for his own home — and we honestly feel that he cares to a level that we didn't think possible. When we began the process we heard all of the horror stories of building your own home. However with him in charge it really has been a joy and we have not really felt overwhelmed and stressed. He cares so much that we really can sit back and trust that he's on top of things. That trust is really the key to what makes Silvio great. With contractors you constantly have to worry if you're being taken for a ride — and whether their suggestions are truly in your best interests or theirs. He genuinely cares to get it right. You are just not going to find that anywhere else. In addition, his expertise is truly amazing. He thinks things through 5 steps in advance and anticipates any issue before it's an issue. This has made it so that during this entire process nothing has taken us by surprise. His estimates of cost are always exactly right, and nothing has gone over budget or caught us by surprise. To me, this is more than a job for Silvio. This is his passion and his love and we genuinely appreciate his efforts and his perfection and cannot imagine working with anyone else."
+              author="House Architecture Client"
+              location="Westchester County, NY"
+            />
+            <TestimonialCard
+              quote="Silvio was an absolute pleasure to work with. You hear so many horror stories about contractors but Silvio was excellent and a perfectionist — he went above and beyond his contract work so we would be happy. I highly recommend him."
+              author="House Architecture Client"
+              location="Westchester County, NY"
+            />
+          </div>
+        </div>
+      </section>
+
+      <CTABanner />
     </>
   )
 }
