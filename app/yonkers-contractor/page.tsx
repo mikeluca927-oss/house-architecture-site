@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Yonkers Contractor | House Architecture & Construction, PLLC',
     description: 'Licensed general contractor serving Yonkers, NY. Free in-home consultations.',
-    url: 'https://www.housearchitecturepllc.com/yonkers-contractor',
+    url: 'https://www.housearchitectureandconstruction.com/yonkers-contractor',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/yonkers-contractor' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/yonkers-contractor' },
 }
 
 const serviceLinks = [

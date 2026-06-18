@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Westchester Home Remodeling | House Architecture & Construction, PLLC',
     description: 'Expert home remodeling throughout Westchester County, NY.',
-    url: 'https://www.housearchitecturepllc.com/westchester-home-remodeling',
+    url: 'https://www.housearchitectureandconstruction.com/westchester-home-remodeling',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/westchester-home-remodeling' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/westchester-home-remodeling' },
 }
 
 const serviceLinks = [

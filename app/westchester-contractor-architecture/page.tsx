@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Westchester County Architect & Contractor | House Architecture & Construction, PLLC',
     description: 'Licensed architect and general contractor serving all of Westchester County, NY.',
-    url: 'https://www.housearchitecturepllc.com/westchester-contractor-architecture',
+    url: 'https://www.housearchitectureandconstruction.com/westchester-contractor-architecture',
   },
   alternates: {
-    canonical: 'https://www.housearchitecturepllc.com/westchester-contractor-architecture',
+    canonical: 'https://www.housearchitectureandconstruction.com/westchester-contractor-architecture',
   },
 }
 

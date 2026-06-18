@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Luxury bathroom remodeling services in Westchester County, NY. Custom showers, primary suite renovations, vanity upgrades, and complete bathroom redesigns. Free in-home consultations.',
   openGraph: {
     title: 'Bathroom Renovation Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/bathrooms',
+    url: 'https://www.housearchitectureandconstruction.com/bathrooms',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/bathrooms' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/bathrooms' },
 }
 
 const images = [

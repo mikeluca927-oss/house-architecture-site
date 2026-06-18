@@ -24,7 +24,7 @@ export default function SEOLandingPage({
     '@type': 'LocalBusiness',
     name: 'House Architecture & Construction, PLLC',
     description: `Residential architecture and construction serving ${city} and Westchester County, NY.`,
-    url: 'https://www.housearchitecturepllc.com',
+    url: 'https://www.housearchitectureandconstruction.com',
     telephone: '+19142247383',
     email: 'Housearchitecture@msn.com',
     address: {

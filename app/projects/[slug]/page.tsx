@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { projects } from '../data'
 import ProjectGallery from './ProjectGallery'
 
-const SITE = 'https://www.housearchitecturepllc.com'
+const SITE = 'https://www.housearchitectureandconstruction.com'
 
 export async function generateStaticParams() {
   return projects.map(p => ({ slug: p.slug }))

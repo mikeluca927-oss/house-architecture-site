@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   },
   description:
     'Award-winning residential architecture and construction firm serving Westchester County, NY. Custom homes, renovations, additions, kitchens, bathrooms, and more. Free in-home consultations.',
-  metadataBase: new URL('https://www.housearchitecturepllc.com'),
+  metadataBase: new URL('https://www.housearchitectureandconstruction.com'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.housearchitecturepllc.com',
+    url: 'https://www.housearchitectureandconstruction.com',
     siteName: 'House Architecture & Construction, PLLC',
     title: 'House Architecture & Construction, PLLC | Westchester NY Architect',
     description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       'Award-winning residential architecture and construction firm serving Westchester County, NY.',
   },
   alternates: {
-    canonical: 'https://www.housearchitecturepllc.com',
+    canonical: 'https://www.housearchitectureandconstruction.com',
   },
   robots: {
     index: true,
@@ -58,11 +58,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://www.housearchitecturepllc.com/#business',
+  '@id': 'https://www.housearchitectureandconstruction.com/#business',
   name: 'House Architecture & Construction, PLLC',
   description:
     'Residential architecture and construction firm serving Westchester County, NY. Custom homes, renovations, additions, kitchens, and bathrooms.',
-  url: 'https://www.housearchitecturepllc.com',
+  url: 'https://www.housearchitectureandconstruction.com',
   telephone: '+19142247383',
   email: 'Housearchitecture@msn.com',
   priceRange: '$$$',

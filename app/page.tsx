@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     title: 'House Architecture & Construction, PLLC | Westchester NY Architect & Contractor',
     description:
       "Westchester County's premier residential architecture and construction firm. Custom homes, renovations, additions, and more.",
-    url: 'https://www.housearchitecturepllc.com',
+    url: 'https://www.housearchitectureandconstruction.com',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'House Architecture & Construction, PLLC — Westchester NY' }],
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com' },
 }
 
 const services = [

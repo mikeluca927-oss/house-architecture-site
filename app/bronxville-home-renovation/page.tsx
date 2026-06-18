@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bronxville Home Renovation | House Architecture & Construction, PLLC',
     description: 'Luxury home renovation in Bronxville, NY. Free in-home consultations.',
-    url: 'https://www.housearchitecturepllc.com/bronxville-home-renovation',
+    url: 'https://www.housearchitectureandconstruction.com/bronxville-home-renovation',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/bronxville-home-renovation' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/bronxville-home-renovation' },
 }
 
 const serviceLinks = [

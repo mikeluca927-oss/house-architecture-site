@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Custom kitchen remodeling services in Westchester County, NY. From custom cabinetry to complete kitchen redesigns. Free in-home consultations.',
   openGraph: {
     title: 'Kitchen Renovation Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/kitchens',
+    url: 'https://www.housearchitectureandconstruction.com/kitchens',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/kitchens' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/kitchens' },
 }
 
 const images = [

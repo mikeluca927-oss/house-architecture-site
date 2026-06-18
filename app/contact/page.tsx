@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact | House Architecture & Construction, PLLC',
     description: 'Schedule your free in-home consultation. Westchester County, NY.',
-    url: 'https://www.housearchitecturepllc.com/contact',
+    url: 'https://www.housearchitectureandconstruction.com/contact',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/contact' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/contact' },
 }
 
 export default function ContactPage() {

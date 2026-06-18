@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Expert home restoration services in Westchester County, NY. Exterior restorations, structural repairs, interior renovations, and architectural preservation. Free in-home consultations.',
   openGraph: {
     title: 'Historic Home Restorations Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/restorations',
+    url: 'https://www.housearchitectureandconstruction.com/restorations',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/restorations' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/restorations' },
 }
 
 const images = [

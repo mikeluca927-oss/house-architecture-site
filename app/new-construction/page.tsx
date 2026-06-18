@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Custom new home design and construction throughout Westchester County. Site planning, architectural design, project management, and construction. Free consultations.',
   openGraph: {
     title: 'New Home Construction Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/new-construction',
+    url: 'https://www.housearchitectureandconstruction.com/new-construction',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/new-construction' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/new-construction' },
 }
 
 const images = [

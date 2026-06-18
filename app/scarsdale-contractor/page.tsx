@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Scarsdale Contractor | House Architecture & Construction, PLLC',
     description: 'Licensed general contractor serving Scarsdale, NY. Free in-home consultations.',
-    url: 'https://www.housearchitecturepllc.com/scarsdale-contractor',
+    url: 'https://www.housearchitectureandconstruction.com/scarsdale-contractor',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/scarsdale-contractor' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-contractor' },
 }
 
 const serviceLinks = [

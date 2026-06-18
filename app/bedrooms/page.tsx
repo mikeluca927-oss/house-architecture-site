@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Custom bedroom remodeling services in Westchester County, NY. Primary suite renovations, custom closets, bedroom additions, and complete room transformations. Free in-home consultations.',
   openGraph: {
     title: 'Bedroom Renovation Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/bedrooms',
+    url: 'https://www.housearchitectureandconstruction.com/bedrooms',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/bedrooms' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/bedrooms' },
 }
 
 const images = [

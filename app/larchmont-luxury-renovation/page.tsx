@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Larchmont Luxury Home Renovation | House Architecture & Construction, PLLC',
     description: 'Luxury home renovation in Larchmont, NY. Free in-home consultations.',
-    url: 'https://www.housearchitecturepllc.com/larchmont-luxury-renovation',
+    url: 'https://www.housearchitectureandconstruction.com/larchmont-luxury-renovation',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/larchmont-luxury-renovation' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/larchmont-luxury-renovation' },
 }
 
 const serviceLinks = [

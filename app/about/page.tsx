@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About House Architecture & Construction, PLLC',
     description: 'Meet Silvio M. Luca — architect and builder serving Westchester County, NY.',
-    url: 'https://www.housearchitecturepllc.com/about',
+    url: 'https://www.housearchitectureandconstruction.com/about',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/about' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/about' },
 }
 
 export default function AboutPage() {

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Licensed residential architect serving Westchester County, NY. Custom home design, renovation architecture, addition design, and construction documents. Free consultations.',
   openGraph: {
     title: 'Residential Architecture Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/architecture',
+    url: 'https://www.housearchitectureandconstruction.com/architecture',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/architecture' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/architecture' },
 }
 
 const images = [

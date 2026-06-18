@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Custom home additions in Westchester County, NY. Second stories, kitchen expansions, living area additions. Design, permitting, and construction services. Free in-home consultations.',
   openGraph: {
     title: 'Home Additions Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/additions',
+    url: 'https://www.housearchitectureandconstruction.com/additions',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/additions' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/additions' },
 }
 
 const relatedServices = [

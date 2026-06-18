@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'White Plains Architect | House Architecture & Construction, PLLC',
     description: 'Licensed residential architect serving White Plains, NY. Free in-home consultations.',
-    url: 'https://www.housearchitecturepllc.com/white-plains-architect',
+    url: 'https://www.housearchitectureandconstruction.com/white-plains-architect',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/white-plains-architect' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/white-plains-architect' },
 }
 
 const serviceLinks = [

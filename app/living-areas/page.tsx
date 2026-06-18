@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Custom living room, family room, and mudroom remodeling services in Westchester County, NY. Open-concept renovations, custom built-ins, and complete living area remodels. Free in-home consultations.',
   openGraph: {
     title: 'Living Area Renovation Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/living-areas',
+    url: 'https://www.housearchitectureandconstruction.com/living-areas',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/living-areas' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/living-areas' },
 }
 
 const images = [

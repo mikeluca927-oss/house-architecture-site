@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     'Whole-home and partial home renovation services in Westchester County, NY. Kitchen remodels, bathroom renovations, basement finishing, and complete home renovations. Free in-home consultations.',
   openGraph: {
     title: 'Home Renovations Westchester NY | House Architecture & Construction',
-    url: 'https://www.housearchitecturepllc.com/renovations',
+    url: 'https://www.housearchitectureandconstruction.com/renovations',
   },
-  alternates: { canonical: 'https://www.housearchitecturepllc.com/renovations' },
+  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/renovations' },
 }
 
 const relatedServices = [
