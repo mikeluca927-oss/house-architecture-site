@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  background-color: #F4F0EB;
-  color: #111111;
+  background-color: #FAFAF8;
+  color: #1C1C1C;
   font-family: var(--font-inter), 'Inter', sans-serif;
 }
 
@@ -17,6 +17,6 @@ body {
 }
 
 ::selection {
-  background-color: #B09A7A;
-  color: #F4F0EB;
+  background-color: #B8965A;
+  color: #FAFAF8;
 }

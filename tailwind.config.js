@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cream: '#F4F0EB',
-        charcoal: '#111111',
-        gold: '#B09A7A',
+        cream: '#FAFAF8',
+        charcoal: '#1C1C1C',
+        gold: '#B8965A',
       },
       fontFamily: {
         cormorant: ['var(--font-cormorant)', 'Cormorant Garamond', 'serif'],
