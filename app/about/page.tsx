@@ -1,230 +1,128 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import ScrollReveal from '../components/ScrollReveal'
-import CTABanner from '../components/CTABanner'
-import TestimonialCard from '../components/TestimonialCard'
 
 export const metadata: Metadata = {
-  title: 'Licensed Architect & Contractor | About House Architecture & Construction PLLC',
+  title: 'Meet Dr. Sean M. Rooney | Rooney Orthodontics — Mahopac, NY',
   description:
-    'Meet Silvio M. Luca — architect and builder, Pratt Institute graduate. House Architecture & Construction, PLLC serves Westchester County with master craftsmanship and timeless design.',
-  openGraph: {
-    title: 'About House Architecture & Construction, PLLC',
-    description: 'Meet Silvio M. Luca — architect and builder serving Westchester County, NY.',
-    url: 'https://www.housearchitectureandconstruction.com/about',
-  },
-  alternates: { canonical: 'https://www.housearchitectureandconstruction.com/about' },
+    'Learn about Dr. Sean M. Rooney, Board Certified Orthodontist and Mahopac native. Columbia University trained, Top Dentist in Hudson Valley 2008-2022, serving the community since 2007.',
 }
+
+const credentials = [
+  'Board Certified by the American Board of Orthodontics (2004)',
+  'Member, American Association of Orthodontists',
+  'Member, World Federation of Orthodontists',
+  'Member, American Dental Association',
+  'Member, American Academy of Dental Sleep Medicine',
+  'Member, Academy of Sports Dentistry',
+  'Chairperson, Columbia University Orthodontic Alumni Executive Board',
+  'President, Putnam County Dental Society',
+]
+
+const awards = [
+  { year: '2008–2022', title: 'Top Dentist in Hudson Valley' },
+  { year: '2017, 2018', title: 'Hudson Valley Parents Favorite Doc' },
+  { year: '2000', title: 'Leadership Award — Dental Society of the State of New York' },
+]
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 md:pt-36 pb-14 md:pb-24 bg-cream">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="pt-32 pb-16 bg-charcoal" aria-label="About header">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">Our Story</p>
-            <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-6 leading-tight">
-              About House Architecture &amp; Construction, PLLC
+            <p className="font-inter text-xs tracking-[0.4em] uppercase text-gold mb-4">About</p>
+            <h1 className="font-cormorant text-4xl md:text-6xl text-cream leading-tight mb-6">
+              Dr. Sean M. Rooney
             </h1>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <div className="border-t border-charcoal/10" />
-
-      {/* Firm Story */}
-      <section className="py-16 md:py-24 bg-cream">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <div>
-              <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal mb-6">Our Firm</h2>
-              <p className="font-inter text-charcoal/65 leading-relaxed mb-5">
-                At House Architecture &amp; Construction, PLLC, we pride ourselves on providing master craftsmanship,
-                timeless design, and modern functionality for all of our projects. Providing service in the Westchester
-                County and surrounding areas, we specialize in new construction, renovations, and restoration.
-              </p>
-              <p className="font-inter text-charcoal/65 leading-relaxed mb-5">
-                Led by Silvio M. Luca, architect and builder, we ensure that every project is completed from conception
-                to completion with the highest quality and attention to detail.
-              </p>
-              <p className="font-inter text-charcoal/65 leading-relaxed">
-                At House Architecture &amp; Construction, PLLC, we stand behind the quality of our work. We ensure that
-                every project is completed to the highest level of quality and attention to detail. If you are not
-                completely satisfied with our work, we will do everything we can to make it right.
-              </p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <img
-              src="https://static.wixstatic.com/media/156c65_273a8b4652cb41a7ad400606032d82bb~mv2.png"
-              alt="House Architecture & Construction PLLC project in Westchester County NY"
-              className="w-full aspect-[4/3] object-cover"
-            />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Our Process */}
-      <section className="py-16 md:py-24 bg-charcoal/[0.03]">
-        <div className="max-w-6xl mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="font-cormorant text-4xl text-charcoal text-center mb-4">Our Process</h2>
-            <p className="font-inter text-charcoal/60 text-center max-w-2xl mx-auto mb-16 leading-relaxed">
-              Our process starts with a thorough preconstruction design phase. This allows us to ensure that the design
-              meets your vision and budget. We then provide a detailed design and construction estimate, so you know
-              exactly what to expect.
+            <p className="font-inter text-base text-cream/60 max-w-xl mx-auto leading-relaxed">
+              Board Certified Orthodontist — Mahopac, NY
             </p>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                num: '01',
-                title: 'Architecture',
-                desc: 'While designing the home, we work closely with our clients to understand their vision and ensure that the design meets their needs. We provide detailed plans and 3D renderings to help you visualize the final product.',
-              },
-              {
-                num: '02',
-                title: 'Design & Construction Estimate',
-                desc: 'Our design and construction estimate is a detailed breakdown of all the costs associated with your project. We provide a transparent breakdown of all the costs, so you know exactly what to expect.',
-              },
-              {
-                num: '03',
-                title: 'On-Site Consultations',
-                desc: 'Throughout the construction process, we provide on-site consultations to ensure that everything is going smoothly. We keep you informed every step of the way, so you know exactly what is happening with your project.',
-              },
-              {
-                num: '04',
-                title: 'The Finishing Touches',
-                desc: 'We believe that the finishing touches are what make a project truly great. We pay attention to every detail to ensure that every aspect of your project is perfect.',
-              },
-            ].map((step, i) => (
-              <ScrollReveal key={step.num} delay={i * 0.1}>
-                <div className="border-t-2 border-gold pt-6">
-                  <span className="font-cormorant text-4xl text-gold/30">{step.num}</span>
-                  <h3 className="font-cormorant text-xl text-charcoal mt-2 mb-3">{step.title}</h3>
-                  <p className="font-inter text-sm text-charcoal/60 leading-relaxed">{step.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Silvio Luca Bio */}
+      {/* Bio Section */}
       <section className="py-16 md:py-24 bg-cream">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <img
-              src="https://static.wixstatic.com/media/156c65_38c9d822ab924b78b4be3c67ab4d225f~mv2.png"
-              alt="Silvio M. Luca — Principal Architect and Builder, House Architecture & Construction PLLC, Eastchester NY"
-              className="w-full max-w-md aspect-square object-cover object-top"
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <div>
-              <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">Principal &amp; Founder</p>
-              <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal mb-6">Silvio M. Luca</h2>
-              <p className="font-inter text-charcoal/65 leading-relaxed mb-5">
-                I&rsquo;ve always known that I wanted to be an architect and builder. I earned my degree from Pratt
-                Institute, where I not only gained knowledge but also nurtured my passion for design and construction.
-              </p>
-              <p className="font-inter text-charcoal/65 leading-relaxed mb-5">
-                What sets me apart is my down-to-earth approach and my unwavering commitment to excellence — I have a
-                keen eye for perfection. I&rsquo;m not just in the business of building houses; I&rsquo;m in the
-                business of building people&rsquo;s dream homes.
-              </p>
-              <p className="font-inter text-charcoal/65 leading-relaxed mb-5">
-                My work exemplifies my dedication to turning those dreams into reality. Each project I undertake is a
-                canvas where I fulfill the aspirations of my clients into a tangible, breathtaking reality. Our projects
-                serve as a testament to my unwavering passion for this craft.
-              </p>
-              <p className="font-inter text-charcoal/65 leading-relaxed mb-8">
-                I look forward to working with you and making your dream home a reality.
-              </p>
-              <a
-                href="tel:9142247383"
-                className="font-inter text-gold text-sm tracking-wider hover:text-gold/80 transition-colors"
-              >
-                (914) 224-7383
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Project photos grid */}
-      <section className="py-16 md:py-24 bg-charcoal/[0.03]">
         <div className="max-w-6xl mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="font-cormorant text-3xl text-charcoal mb-12">Our Work</h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              {
-                src: 'https://static.wixstatic.com/media/156c65_f3de0c61e7cd4715848f34c0e7cb17ed~mv2.jpeg',
-                alt: 'Custom home architecture project in Westchester County NY',
-              },
-              {
-                src: 'https://static.wixstatic.com/media/156c65_95194bbbebc0437580a1b5b84868cef3~mv2.jpeg',
-                alt: 'Residential construction project by House Architecture & Construction PLLC',
-              },
-              {
-                src: 'https://static.wixstatic.com/media/156c65_a96ec8007c6444f5abb654d1dc9b1989~mv2.png',
-                alt: 'Home renovation project in Westchester County NY',
-              },
-            ].map((img, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover" />
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <ScrollReveal>
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src="https://www.rooneyortho.com/assets/uploads/images/meet-dr-rooney.jpg"
+                  alt="Dr. Sean M. Rooney — Board Certified Orthodontist, Mahopac NY"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <div className="space-y-6">
+                <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold">Our Doctor</p>
+                <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal leading-tight">
+                  A Community-Committed Orthodontist
+                </h2>
+                <div className="space-y-4 font-inter text-sm text-charcoal/65 leading-relaxed">
+                  <p>
+                    Dr. Sean M. Rooney is a Board Certified Orthodontist and a proud native of Mahopac, New York, having graduated from Mahopac High School. Deeply rooted in this community, he opened his practice here in 2007 alongside his wife Jennifer — committed to serving the neighbors, families, and friends he has known his entire life.
+                  </p>
+                  <p>
+                    Dr. Rooney earned his Bachelor of Arts in Physical Anthropology from the University of Buffalo, then went on to Columbia University School of Dental and Oral Surgery, where he graduated in 2000 and was honored with the Leadership Award by the Dental Society of the State of New York as Class President. He completed both a General Dentistry Residency and an Orthodontics Residency at Columbia University (2002–2004), where he now serves as Chairperson of the Orthodontic Alumni Executive Board.
+                  </p>
+                  <p>
+                    Dr. Rooney has been selected as a Top Dentist in the Hudson Valley every year from 2008 to 2022, and was twice elected Hudson Valley Parents Favorite Doc. He serves as President of the Putnam County Dental Society and is deeply committed to continuing education in orthodontics, dental sleep medicine, and sports dentistry.
+                  </p>
+                  <p>
+                    Outside the office, Dr. Rooney is a two-time Ironman triathlete, involved with the Mahopac Triathlon and the Ty Louis Campbell Foundation. He and Jennifer have three daughters: Emma, Addison, and Lia.
+                  </p>
+                </div>
+                <div className="pt-2 flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-block bg-gold text-white font-inter text-xs tracking-[0.25em] uppercase px-8 py-3.5 hover:bg-gold/90 transition-colors"
+                  >
+                    Schedule a Consultation
+                  </Link>
+                  <Link
+                    href="/what-sets-us-apart"
+                    className="inline-block border border-charcoal/20 text-charcoal font-inter text-xs tracking-[0.25em] uppercase px-8 py-3.5 hover:border-gold hover:text-gold transition-colors"
+                  >
+                    What Sets Us Apart
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
-          <ScrollReveal delay={0.3}>
-            <div className="text-center mt-10">
-              <Link
-                href="/projects"
-                className="font-inter text-sm tracking-widest uppercase border border-charcoal/20 px-8 py-3 hover:border-gold hover:text-gold transition-colors"
-              >
-                View All Projects
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-16 md:py-24 bg-cream" aria-labelledby="values-heading">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Education Timeline */}
+      <section className="py-16 md:py-20 bg-charcoal/[0.03]">
+        <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <h2
-              id="values-heading"
-              className="font-cormorant text-4xl md:text-5xl text-charcoal text-center mb-16 leading-tight"
-            >
-              Our Core Values
+            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4 text-center">Education & Training</p>
+            <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal text-center mb-12 leading-tight">
+              Columbia University Trained
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="space-y-0 divide-y divide-charcoal/10">
             {[
-              {
-                value: 'Precision',
-                description:
-                  'Every measurement, material, and decision is made with exactness. We believe precision in the details defines the quality of the whole.',
-              },
-              {
-                value: 'Craftsmanship',
-                description:
-                  'We work with skilled tradespeople who share our commitment to quality. The difference between ordinary and extraordinary is the level of craft applied.',
-              },
-              {
-                value: 'Trust',
-                description:
-                  'Building a home requires trust. We earn it through transparency, consistent communication, and by delivering on every promise we make.',
-              },
+              { period: '1992–1996', school: 'Mahopac High School', detail: 'Mahopac, NY' },
+              { period: '1996–2000', school: 'University of Buffalo', detail: 'Bachelor of Arts — Physical Anthropology' },
+              { period: '2000', school: 'Columbia University School of Dental and Oral Surgery', detail: 'Doctor of Dental Surgery — Leadership Award, Class President' },
+              { period: '2000–2001', school: 'Columbia University', detail: 'General Dentistry Residency' },
+              { period: '2002–2004', school: 'Columbia University', detail: 'Orthodontics Residency — Board Certified 2004' },
             ].map((item, i) => (
-              <ScrollReveal key={item.value} delay={i * 0.15}>
-                <div className="border-t-2 border-gold pt-8">
-                  <h3 className="font-cormorant text-3xl text-charcoal mb-4">{item.value}</h3>
-                  <p className="font-inter text-sm text-charcoal/55 leading-relaxed">{item.description}</p>
+              <ScrollReveal key={item.period} delay={i * 0.07}>
+                <div className="flex gap-8 py-8">
+                  <div className="w-28 flex-shrink-0">
+                    <p className="font-inter text-xs tracking-widest uppercase text-gold">{item.period}</p>
+                  </div>
+                  <div>
+                    <p className="font-cormorant text-xl text-charcoal mb-1">{item.school}</p>
+                    <p className="font-inter text-sm text-charcoal/55">{item.detail}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -232,26 +130,86 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-16 md:py-24 bg-charcoal/[0.03]">
+      {/* Awards */}
+      <section className="py-16 bg-charcoal">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-10 text-center">
-              Client Stories
-            </p>
+            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4 text-center">Recognition</p>
+            <h2 className="font-cormorant text-3xl md:text-4xl text-cream text-center mb-12 leading-tight">Awards & Honors</h2>
           </ScrollReveal>
-          <TestimonialCard
-            quote="We are a month or two away from moving into our dream home, built from the ground up on a vacant lot. Silvio has been integral in the design and inspiration for the home — but also in the execution of the process. His eye for details and perfection are unmatched. Silvio treats every detail as if he's doing it for his own home."
-            author="House Architecture Client"
-            location="Westchester County, NY"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {awards.map((a, i) => (
+              <ScrollReveal key={a.title} delay={i * 0.1}>
+                <div className="text-center">
+                  <div className="w-10 h-px bg-gold mx-auto mb-4" />
+                  <p className="font-inter text-xs tracking-widest uppercase text-gold mb-2">{a.year}</p>
+                  <p className="font-cormorant text-xl text-cream">{a.title}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <CTABanner
-        headline="Ready to Build With Us?"
-        subhead="Schedule your free in-home consultation with Silvio M. Luca."
-      />
+      {/* Credentials */}
+      <section className="py-16 md:py-20 bg-cream">
+        <div className="max-w-4xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4 text-center">Credentials & Affiliations</p>
+            <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal text-center mb-12 leading-tight">
+              Professional Memberships
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {credentials.map((c, i) => (
+              <ScrollReveal key={c} delay={i * 0.07}>
+                <div className="flex items-start gap-4 bg-white p-6 border border-charcoal/8">
+                  <span className="text-gold mt-0.5 flex-shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </span>
+                  <p className="font-inter text-sm text-charcoal/70 leading-relaxed">{c}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Affiliation Logos */}
+      <section className="py-10 bg-charcoal/[0.03] border-t border-charcoal/10">
+        <div className="max-w-4xl mx-auto px-6 flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          {['aao', 'abo', 'ada', 'wfo', 'sleep', 'sports'].map((logo) => (
+            <img
+              key={logo}
+              src={`https://www.rooneyortho.com/assets/images/logos/${logo}.png`}
+              alt={logo.toUpperCase()}
+              className="h-10 md:h-14 object-contain opacity-60 hover:opacity-100 transition-opacity"
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-gold">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <ScrollReveal>
+            <h2 className="font-cormorant text-3xl md:text-4xl text-white mb-4">
+              Ready to Get Started?
+            </h2>
+            <p className="font-inter text-sm text-white/80 mb-8">
+              Schedule your complimentary consultation with Dr. Rooney today.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-gold font-inter text-xs tracking-[0.25em] uppercase px-10 py-4 hover:bg-white/90 transition-colors"
+            >
+              Book Free Consultation
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   )
 }
