@@ -219,6 +219,8 @@ export const projects: Project[] = [
       `${BASE}/156c65_5ac67bfeabe845d3b4ac7e4f1b140ae3~mv2.png`,
       `${BASE}/156c65_6b371fa2ca8b44b0819658be8c53dd8a~mv2.png`,
       '/projects/scarsdale-residence/1.jpg',
+      '/projects/scarsdale-residence/2.jpg',
+      '/projects/scarsdale-residence/3.jpg',
     ],
   },
 ]
