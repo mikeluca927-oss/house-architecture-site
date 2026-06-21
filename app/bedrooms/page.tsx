@@ -23,6 +23,10 @@ const images = [
     src: 'https://static.wixstatic.com/media/156c65_671bc7b162414601b06c197ac0db6f04~mv2.png',
     alt: 'Primary suite bedroom design by House Architecture & Construction PLLC in Westchester NY',
   },
+  {
+    src: '/projects/heathcote-classic/9.webp',
+    alt: 'Bedroom renovation in Scarsdale NY by House Architecture & Construction',
+  },
 ]
 
 const relatedServices = [
