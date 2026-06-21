@@ -38,6 +38,7 @@ export const projects: Project[] = [
       '/projects/heathcote-classic/6.webp',
       '/projects/heathcote-classic/7.webp',
       '/projects/heathcote-classic/8.webp',
+      '/projects/heathcote-classic/9.webp',
     ],
   },
   {

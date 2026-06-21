@@ -104,7 +104,7 @@ const projectCategories = [
     title: 'Bedrooms',
     href: '/bedrooms',
     description: 'Primary suites and bedroom renovations designed for comfort',
-    img: '/projects/heathcote-classic/5.webp',
+    img: '/projects/heathcote-classic/9.webp',
   },
   {
     title: 'Living Areas',
