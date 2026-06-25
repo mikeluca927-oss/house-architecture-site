@@ -238,14 +238,26 @@ export const projects: Project[] = [
     images: ['/projects/murry-shingle/1.jpg'],
   },
   {
-    name: 'Pelham Stone Estate',
+    name: 'Pelham Brick Estate',
     location: 'Pelham, NY',
-    slug: 'pelham-stone-estate',
-    cover: '/projects/pelham-stone-estate/1.png',
+    slug: 'pelham-brick-estate',
+    cover: '/projects/pelham-brick-estate/1.jpg',
     images: [
-      '/projects/pelham-stone-estate/1.png',
-      '/projects/pelham-stone-estate/2.png',
-      '/projects/pelham-stone-estate/3.png',
+      '/projects/pelham-brick-estate/1.jpg',
+      '/projects/pelham-brick-estate/2.png',
+      '/projects/pelham-brick-estate/3.png',
+    ],
+  },
+  {
+    name: 'Wilmot Manor',
+    location: 'Scarsdale, NY',
+    slug: 'wilmot-manor',
+    cover: '/projects/wilmot-manor/1.png',
+    images: [
+      '/projects/wilmot-manor/1.png',
+      '/projects/wilmot-manor/2.jpg',
+      '/projects/wilmot-manor/3.jpg',
+      '/projects/wilmot-manor/4.jpg',
     ],
   },
   {
