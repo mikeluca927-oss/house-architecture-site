@@ -54,6 +54,8 @@ export default function ProjectGallery({ project }: { project: Project }) {
                     src={src}
                     alt={`${project.name} in ${project.location} — photo ${i + 1} of ${project.images.length}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300 flex items-center justify-center">
                     <svg

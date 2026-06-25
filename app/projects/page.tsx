@@ -36,6 +36,8 @@ export default function ProjectsPage() {
                     src={project.cover}
                     alt={`${project.name} — architecture and construction project in ${project.location} by House Architecture & Construction PLLC`}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading={i < 6 ? 'eager' : 'lazy'}
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-charcoal/75 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h2 className="font-cormorant text-xl text-cream mb-1">{project.name}</h2>

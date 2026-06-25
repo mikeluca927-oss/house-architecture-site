@@ -112,7 +112,7 @@ export default function RestorationsPage() {
                 <div className="group relative aspect-video overflow-hidden max-w-3xl">
                   <img
                     src={img.src}
-                    alt={img.alt}
+                    alt={img.alt} loading="lazy" decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>

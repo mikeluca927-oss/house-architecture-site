@@ -222,6 +222,8 @@ function ProjectCard({ cat, i }: { cat: typeof projectCategories[0]; i: number }
           src={cat.img}
           alt={`${cat.title} by House Architecture & Construction in Westchester County NY`}
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
           whileHover={{ scale: 1.08 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         />
@@ -287,7 +289,7 @@ export default function HomePage() {
             fill
             className="object-cover"
             priority
-            unoptimized
+            sizes="100vw"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
