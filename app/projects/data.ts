@@ -208,14 +208,14 @@ export const projects: Project[] = [
   },
   {
     name: 'Corell Tudor',
-    location: 'Westchester, NY',
+    location: 'Scarsdale, NY',
     slug: 'corell-tudor',
     cover: '/projects/corell-tudor/1.jpeg',
     images: ['/projects/corell-tudor/1.jpeg'],
   },
   {
     name: 'Cushman Craftsman',
-    location: 'Westchester, NY',
+    location: 'Scarsdale, NY',
     slug: 'cushman-craftsman',
     cover: '/projects/cushman-craftsman/1.png',
     images: [
@@ -225,14 +225,14 @@ export const projects: Project[] = [
   },
   {
     name: 'Edgewood Restoration',
-    location: 'Westchester, NY',
+    location: 'Scarsdale, NY',
     slug: 'edgewood-restoration',
     cover: '/projects/edgewood-restoration/1.png',
     images: ['/projects/edgewood-restoration/1.png'],
   },
   {
     name: 'Murry Shingle',
-    location: 'Westchester, NY',
+    location: 'Scarsdale, NY',
     slug: 'murry-shingle',
     cover: '/projects/murry-shingle/1.jpg',
     images: ['/projects/murry-shingle/1.jpg'],
@@ -250,14 +250,14 @@ export const projects: Project[] = [
   },
   {
     name: 'Reynal Crossing Tudor',
-    location: 'Westchester, NY',
+    location: 'Scarsdale, NY',
     slug: 'reynal-crossing-tudor',
     cover: '/projects/reynal-crossing-tudor/1.png',
     images: ['/projects/reynal-crossing-tudor/1.png'],
   },
   {
     name: 'Wildwood Colonial',
-    location: 'Westchester, NY',
+    location: 'Scarsdale, NY',
     slug: 'wildwood-colonial',
     cover: '/projects/wildwood-colonial/1.jpg',
     images: ['/projects/wildwood-colonial/1.jpg'],
