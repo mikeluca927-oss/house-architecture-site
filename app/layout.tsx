@@ -19,6 +19,11 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
+  verification: {
+    other: {
+      'msvalidate.01': '8AE384EFA2FE45683BB0FC8DD5F28DCB',
+    },
+  },
   title: {
     default: 'House Architecture & Construction, PLLC | Westchester NY Architect',
     template: '%s | House Architecture & Construction, PLLC',
