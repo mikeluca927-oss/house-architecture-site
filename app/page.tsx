@@ -281,15 +281,15 @@ export default function HomePage() {
     <>
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden" aria-label="Hero">
-        {/* Parallax background */}
+        {/* Video background */}
         <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
-          <Image
-            src="https://static.wixstatic.com/media/156c65_9a776fc9aeae43969a654e26efbd034c~mv2.png"
-            alt="Custom home architecture and construction in Westchester County NY by House Architecture & Construction PLLC"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/hero-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
