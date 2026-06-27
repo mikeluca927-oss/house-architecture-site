@@ -104,6 +104,12 @@ export default function Navbar() {
           </div>
 
           <Link
+            href="/blog"
+            className="font-inter text-xs tracking-widest uppercase hover:text-gold transition-colors text-charcoal"
+          >
+            Blog
+          </Link>
+          <Link
             href="/about"
             className="font-inter text-xs tracking-widest uppercase hover:text-gold transition-colors text-charcoal"
           >
@@ -200,6 +206,13 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          <Link
+            href="/blog"
+            className="font-inter text-sm tracking-widest uppercase hover:text-gold transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Blog
+          </Link>
           <Link
             href="/about"
             className="font-inter text-sm tracking-widest uppercase hover:text-gold transition-colors"
