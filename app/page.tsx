@@ -1,6 +1,4 @@
 'use client'
-import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
