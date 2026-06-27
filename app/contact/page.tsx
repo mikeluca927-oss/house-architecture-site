@@ -23,7 +23,7 @@ export default function ContactPage() {
           <ScrollReveal>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-gold mb-4">Get In Touch</p>
             <h1 className="font-cormorant text-4xl md:text-6xl text-charcoal mb-6 leading-tight">
-              Start Your Westchester Architecture Project
+              Your Dream Home Begins Here
             </h1>
             <p className="font-inter text-lg text-charcoal/60 max-w-xl leading-relaxed">
               Contact House Architecture &amp; Construction, PLLC for a free in-home consultation. We serve all of
