@@ -290,6 +290,7 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            poster="https://static.wixstatic.com/media/156c65_9a776fc9aeae43969a654e26efbd034c~mv2.png"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
