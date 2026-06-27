@@ -1,0 +1,75 @@
+name: Daily Blog Post
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # 12 PM UTC = 8 AM ET daily
+  workflow_dispatch:       # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate blog post via Claude API
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          DATE=$(date +%Y-%m-%d)
+
+          TOPICS=(
+            "home addition Westchester NY"
+            "kitchen renovation Scarsdale NY"
+            "general contractor Westchester County NY"
+            "residential architect Westchester NY"
+            "bathroom remodel Westchester County"
+            "custom home construction Westchester NY"
+            "historic home restoration Westchester NY"
+            "primary suite addition Scarsdale NY"
+            "home renovation cost Westchester NY"
+            "new home construction Eastchester NY"
+            "home renovation permits Westchester NY"
+            "colonial home renovation Westchester NY"
+            "open concept renovation Westchester NY"
+            "second story addition Westchester NY"
+            "home remodeling Bronxville NY"
+            "architect vs contractor Westchester NY"
+            "luxury home renovation Scarsdale NY"
+            "kitchen addition Westchester County"
+            "mudroom addition Westchester NY"
+            "basement renovation Westchester NY"
+          )
+          TOPIC=${TOPICS[$RANDOM % ${#TOPICS[@]}]}
+
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "content-type: application/json" \
+            -d "{
+              \"model\": \"claude-haiku-4-5-20251001\",
+              \"max_tokens\": 1500,
+              \"messages\": [{
+                \"role\": \"user\",
+                \"content\": \"Write an SEO-optimized blog post for House Architecture & Construction, PLLC — a licensed residential architecture and construction firm in Westchester County, NY run by principal architect Silvio M. Luca. Target keyword: '$TOPIC'. Return ONLY a valid JSON object with these exact fields: title (string), slug (url-friendly string, no spaces), excerpt (1-2 sentence string), content (string of HTML using <p> and <h2> tags, 450-600 words). The post should be genuinely helpful to Westchester homeowners, mention local towns naturally, and end with a soft call to action to contact us at (914) 224-7383 for a free consultation. No markdown, no code fences — return raw JSON only.\"
+              }]
+            }")
+
+          POST_JSON=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          print(data['content'][0]['text'])
+          ")
+
+          mkdir -p content/blog
+          echo "$POST_JSON" > "content/blog/${DATE}.json"
+
+      - name: Commit and push
+        run: |
+          git config user.name "HAC Blog Bot"
+          git config user.email "bot@housearchitectureandconstruction.com"
+          git add content/blog/
+          git diff --staged --quiet || git commit -m "Blog: daily post $(date +%Y-%m-%d)"
+          git push
