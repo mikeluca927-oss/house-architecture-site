@@ -276,10 +276,38 @@ export default function HomePage() {
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
+
     video.muted = true
-    // If already past canplay state (e.g. cached), mark ready immediately
-    if (video.readyState >= 3) setVideoReady(true)
-    video.play().catch(() => {})
+    video.setAttribute('playsinline', '')
+    video.setAttribute('webkit-playsinline', '')
+
+    const tryPlay = () => {
+      video.muted = true
+      video.play().catch(() => {})
+    }
+
+    if (video.readyState >= 3) {
+      setVideoReady(true)
+      tryPlay()
+    }
+
+    video.addEventListener('canplay', tryPlay)
+    video.addEventListener('loadeddata', tryPlay)
+
+    // Re-play when tab becomes visible again (iOS pauses background tabs)
+    const handleVisibility = () => { if (!document.hidden) tryPlay() }
+    document.addEventListener('visibilitychange', handleVisibility)
+
+    // iOS fallback: force play on first user touch
+    document.addEventListener('touchstart', tryPlay, { once: true })
+
+    tryPlay()
+
+    return () => {
+      video.removeEventListener('canplay', tryPlay)
+      video.removeEventListener('loadeddata', tryPlay)
+      document.removeEventListener('visibilitychange', handleVisibility)
+    }
   }, [])
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
   const heroY = useTransform(heroScroll, [0, 1], ['0%', '25%'])
@@ -300,6 +328,7 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            preload="auto"
             disablePictureInPicture
             x-webkit-airplay="deny"
             style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.6s ease' }}
