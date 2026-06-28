@@ -44,3 +44,22 @@ video::-webkit-media-controls-start-playback-button {
 video::-webkit-media-controls-overlay-play-button {
   display: none !important;
 }
+
+/* Blog post content */
+.blog-content p {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgb(42 42 42 / 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.blog-content h2 {
+  font-family: var(--font-cormorant);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: rgb(42 42 42);
+  margin-top: 2.75rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.01em;
+}

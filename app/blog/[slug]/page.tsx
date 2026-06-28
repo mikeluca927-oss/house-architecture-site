@@ -54,7 +54,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       <section className="py-12 bg-cream">
         <div
-          className="max-w-3xl mx-auto px-6 font-inter text-base text-charcoal/70 leading-relaxed prose-headings:font-cormorant prose-headings:text-charcoal prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-p:mb-5"
+          className="max-w-3xl mx-auto px-6 blog-content"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </section>
