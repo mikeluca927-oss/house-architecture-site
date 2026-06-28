@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import CTABanner from './components/CTABanner'
 import TestimonialCard from './components/TestimonialCard'
 import CountUp from './components/CountUp'
@@ -270,6 +270,14 @@ function ProjectCard({ cat, i }: { cat: typeof projectCategories[0]; i: number }
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    video.muted = true
+    video.play().catch(() => {})
+  }, [])
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
   const heroY = useTransform(heroScroll, [0, 1], ['0%', '25%'])
   const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0])
@@ -282,12 +290,15 @@ export default function HomePage() {
         {/* Video background */}
         <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
           <video
+            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             src="/hero-video.mp4"
             autoPlay
             muted
             loop
             playsInline
+            disablePictureInPicture
+            x-webkit-airplay="deny"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
