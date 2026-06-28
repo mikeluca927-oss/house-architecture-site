@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { projects } from './projects/data'
+import { getAllPosts } from '../lib/blog'
 
 const SITE = 'https://www.housearchitectureandconstruction.com'
 
@@ -49,5 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...projectRoutes]
+  const blogRoutes: MetadataRoute.Sitemap = getAllPosts().map(p => ({
+    url: `${SITE}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
+  return [...staticRoutes, ...projectRoutes, ...blogRoutes]
 }

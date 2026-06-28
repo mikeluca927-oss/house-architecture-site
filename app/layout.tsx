@@ -157,6 +157,43 @@ const jsonLd = {
   },
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do you offer free consultations in Scarsdale?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every project begins with a free in-home consultation. We come to your Scarsdale home, assess the space, and provide honest recommendations — no commitment required.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are you a licensed architect and contractor in New York?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Principal Silvio M. Luca holds dual licensure as a registered New York State architect and a licensed general contractor. We are also fully insured and hold the Westchester County Home Improvement Contractor (HIC) license.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What areas of Scarsdale do you serve?',
+      acceptedAnswer: { '@type': 'Answer', text: 'We serve all of Scarsdale including Heathcote, Edgewood, Fox Meadow, Greenacres, and Murray Hill. We also serve all of Westchester County including Bronxville, Larchmont, Mamaroneck, Eastchester, Pelham, Rye, White Plains, and New Rochelle.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a design-build firm?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A design-build firm handles both architectural design and construction under one roof. At House Architecture & Construction, PLLC, your architect and your builder are the same person — eliminating miscommunication, change orders, and delays that happen when design and construction are separate.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you handle building permits in Scarsdale?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. We prepare and file all architectural drawings and permit applications directly with the Village of Scarsdale Building Department and all other Westchester municipalities. Our in-house architect produces all required documents.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What types of home renovations do you do in Westchester County?',
+      acceptedAnswer: { '@type': 'Answer', text: 'We handle full-scale home renovations, home additions, second-story additions, kitchen remodels, bathroom renovations, primary suite additions, historic restorations, and ground-up new construction throughout Westchester County, NY.' },
+    },
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
@@ -164,6 +201,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body className="font-inter bg-cream text-charcoal antialiased">
