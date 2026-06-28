@@ -271,11 +271,14 @@ function ProjectCard({ cat, i }: { cat: typeof projectCategories[0]; i: number }
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoReady, setVideoReady] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
     video.muted = true
+    // If already past canplay state (e.g. cached), mark ready immediately
+    if (video.readyState >= 3) setVideoReady(true)
     video.play().catch(() => {})
   }, [])
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
@@ -288,7 +291,7 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden" aria-label="Hero">
         {/* Video background */}
-        <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
+        <motion.div className="absolute inset-0 bg-charcoal" style={{ y: heroY, scale: heroScale }}>
           <video
             ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -299,7 +302,12 @@ export default function HomePage() {
             playsInline
             disablePictureInPicture
             x-webkit-airplay="deny"
+            style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.6s ease' }}
+            onCanPlay={() => setVideoReady(true)}
+            onPlaying={() => setVideoReady(true)}
           />
+          {/* Transparent overlay above video — prevents iOS Safari from showing native play button tap target */}
+          <div className="absolute inset-0 z-[1]" aria-hidden="true" />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
 
