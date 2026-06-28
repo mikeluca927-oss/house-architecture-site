@@ -282,7 +282,7 @@ export default function HomePage() {
         {/* Video background */}
         <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
           <video
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             src="/hero-video.mp4"
             autoPlay
             muted
