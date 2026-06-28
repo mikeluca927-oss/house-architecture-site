@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { useRef } from 'react'
 import CTABanner from './components/CTABanner'
 import TestimonialCard from './components/TestimonialCard'
 import CountUp from './components/CountUp'
@@ -270,45 +270,6 @@ function ProjectCard({ cat, i }: { cat: typeof projectCategories[0]; i: number }
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoReady, setVideoReady] = useState(false)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    video.muted = true
-    video.setAttribute('playsinline', '')
-    video.setAttribute('webkit-playsinline', '')
-
-    const tryPlay = () => {
-      video.muted = true
-      video.play().catch(() => {})
-    }
-
-    if (video.readyState >= 3) {
-      setVideoReady(true)
-      tryPlay()
-    }
-
-    video.addEventListener('canplay', tryPlay)
-    video.addEventListener('loadeddata', tryPlay)
-
-    // Re-play when tab becomes visible again (iOS pauses background tabs)
-    const handleVisibility = () => { if (!document.hidden) tryPlay() }
-    document.addEventListener('visibilitychange', handleVisibility)
-
-    // iOS fallback: force play on first user touch
-    document.addEventListener('touchstart', tryPlay, { once: true })
-
-    tryPlay()
-
-    return () => {
-      video.removeEventListener('canplay', tryPlay)
-      video.removeEventListener('loadeddata', tryPlay)
-      document.removeEventListener('visibilitychange', handleVisibility)
-    }
-  }, [])
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
   const heroY = useTransform(heroScroll, [0, 1], ['0%', '25%'])
   const heroOpacity = useTransform(heroScroll, [0, 0.7], [1, 0])
@@ -319,34 +280,11 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden" aria-label="Hero">
         {/* Video background */}
-        <motion.div className="absolute inset-0 bg-charcoal" style={{ y: heroY, scale: heroScale }}>
-          {/* Desktop: poster shows instantly, video fades in on top once ready */}
+        <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
           <img
-            src="/hero-mobile.jpg"
-            alt=""
-            aria-hidden="true"
-            className="hidden md:block absolute inset-0 w-full h-full object-cover"
-          />
-          <video
-            ref={videoRef}
-            className="hidden md:block absolute inset-0 w-full h-full object-cover pointer-events-none"
-            src="/hero-video.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            disablePictureInPicture
-            style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.8s ease' }}
-            onCanPlay={() => setVideoReady(true)}
-            onPlaying={() => setVideoReady(true)}
-          />
-          {/* Mobile: optimized static image — avoids iOS autoplay issues entirely */}
-          <img
-            src="/hero-mobile.jpg"
+            src="/hero-house.jpg"
             alt="House Architecture & Construction — Westchester NY"
-            className="md:hidden absolute inset-0 w-full h-full object-cover object-center"
-            style={{ objectPosition: '60% center' }}
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
