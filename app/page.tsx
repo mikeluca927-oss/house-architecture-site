@@ -345,7 +345,8 @@ export default function HomePage() {
           <img
             src="/hero-mobile.jpg"
             alt="House Architecture & Construction — Westchester NY"
-            className="md:hidden absolute inset-0 w-full h-full object-cover"
+            className="md:hidden absolute inset-0 w-full h-full object-cover object-center"
+            style={{ objectPosition: '60% center' }}
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/75" />
