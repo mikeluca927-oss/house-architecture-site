@@ -144,6 +144,10 @@ All new projects begin with a free in-home consultation. No commitment is requir
 - About: https://www.housearchitectureandconstruction.com/about
 - Blog: https://www.housearchitectureandconstruction.com/blog
 - Contact: https://www.housearchitectureandconstruction.com/contact
+- Scarsdale Home Renovation: https://www.housearchitectureandconstruction.com/scarsdale-home-renovation
+- Scarsdale Home Addition: https://www.housearchitectureandconstruction.com/scarsdale-addition
+- Scarsdale Kitchen Renovation: https://www.housearchitectureandconstruction.com/scarsdale-kitchen-renovation
+- Scarsdale New Construction: https://www.housearchitectureandconstruction.com/scarsdale-new-construction
 - Sitemap: https://www.housearchitectureandconstruction.com/sitemap.xml
 
 ## Frequently Asked Questions
