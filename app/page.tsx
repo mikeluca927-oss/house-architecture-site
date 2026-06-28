@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import CTABanner from './components/CTABanner'
 import TestimonialCard from './components/TestimonialCard'
 import CountUp from './components/CountUp'
