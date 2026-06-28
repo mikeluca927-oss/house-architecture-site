@@ -24,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/scarsdale-addition`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE}/scarsdale-kitchen-renovation`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE}/scarsdale-new-construction`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE}/heathcote-renovation`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE}/edgewood-renovation`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE}/bronxville-home-renovation`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE}/larchmont-luxury-renovation`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE}/westchester-contractor-architecture`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
