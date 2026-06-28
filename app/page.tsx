@@ -320,7 +320,13 @@ export default function HomePage() {
       <section ref={heroRef} className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden" aria-label="Hero">
         {/* Video background */}
         <motion.div className="absolute inset-0 bg-charcoal" style={{ y: heroY, scale: heroScale }}>
-          {/* Desktop: looping video */}
+          {/* Desktop: poster shows instantly, video fades in on top once ready */}
+          <img
+            src="/hero-mobile.jpg"
+            alt=""
+            aria-hidden="true"
+            className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          />
           <video
             ref={videoRef}
             className="hidden md:block absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -331,13 +337,13 @@ export default function HomePage() {
             playsInline
             preload="auto"
             disablePictureInPicture
-            style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.6s ease' }}
+            style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.8s ease' }}
             onCanPlay={() => setVideoReady(true)}
             onPlaying={() => setVideoReady(true)}
           />
-          {/* Mobile: static image — avoids iOS autoplay issues entirely */}
+          {/* Mobile: optimized static image — avoids iOS autoplay issues entirely */}
           <img
-            src="https://static.wixstatic.com/media/156c65_c7fbaa78576f43e1971227717eec4476~mv2.jpeg"
+            src="/hero-mobile.jpg"
             alt="House Architecture & Construction — Westchester NY"
             className="md:hidden absolute inset-0 w-full h-full object-cover"
           />
