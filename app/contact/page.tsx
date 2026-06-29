@@ -53,7 +53,7 @@ export default function ContactPage() {
                   <h2 className="font-cormorant text-2xl text-charcoal mb-5">Contact Information</h2>
                   <div className="space-y-5">
                     <div>
-                      <p className="font-inter text-xs tracking-widest uppercase text-charcoal/40 mb-1.5">Phone</p>
+                      <p className="font-inter text-xs tracking-widest uppercase text-charcoal/40 mb-1.5">Call, Text, or Voicemail</p>
                       <a
                         href="tel:9142247383"
                         className="font-inter text-charcoal hover:text-gold transition-colors"

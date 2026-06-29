@@ -17,6 +17,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     phone: '',
+    address: '',
     projectType: '',
     message: '',
   })
@@ -105,6 +106,23 @@ export default function ContactForm() {
           onChange={(e) => setForm({ ...form, phone: e.target.value })}
           className="w-full border border-charcoal/20 bg-transparent px-4 py-3 font-inter text-sm focus:outline-none focus:border-gold transition-colors placeholder:text-charcoal/30"
           placeholder="(914) 000-0000"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="contact-address"
+          className="block font-inter text-xs tracking-widest uppercase text-charcoal/50 mb-2"
+        >
+          Property Address
+        </label>
+        <input
+          id="contact-address"
+          type="text"
+          value={form.address}
+          onChange={(e) => setForm({ ...form, address: e.target.value })}
+          className="w-full border border-charcoal/20 bg-transparent px-4 py-3 font-inter text-sm focus:outline-none focus:border-gold transition-colors placeholder:text-charcoal/30"
+          placeholder="123 Main St, Scarsdale, NY"
         />
       </div>
 
