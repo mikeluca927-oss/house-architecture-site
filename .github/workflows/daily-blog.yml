@@ -58,20 +58,17 @@ jobs:
             }")
 
           POST_JSON=$(echo "$RESPONSE" | python3 -c "
-          import sys, json, re
-          data = json.load(sys.stdin)
-          text = data['content'][0]['text']
-          # Strip markdown code fences if Claude wrapped the JSON
-          text = re.sub(r'^[\s\S]*?```(?:json)?\s*', '', text)
-          text = re.sub(r'\s*```[\s\S]*$', '', text)
-          text = text.strip()
-          # Add date field
-          import os
-          from datetime import date
-          obj = json.loads(text)
-          obj['date'] = os.environ.get('DATE', str(date.today()))
-          print(json.dumps(obj, ensure_ascii=False))
-          ")
+import sys, json
+data = json.load(sys.stdin)
+text = data['content'][0]['text']
+# Extract just the JSON object — find first { and last }
+start = text.index('{')
+end = text.rindex('}') + 1
+text = text[start:end]
+obj = json.loads(text)
+obj['date'] = sys.argv[1]
+print(json.dumps(obj, ensure_ascii=False, indent=2))
+          " "$DATE")
 
           mkdir -p content/blog
           echo "$POST_JSON" > "content/blog/${DATE}.json"
