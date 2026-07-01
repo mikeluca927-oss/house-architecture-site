@@ -150,6 +150,28 @@ All new projects begin with a free in-home consultation. No commitment is requir
 - Scarsdale New Construction: https://www.housearchitectureandconstruction.com/scarsdale-new-construction
 - Sitemap: https://www.housearchitectureandconstruction.com/sitemap.xml
 
+## Markdown Content (AI & Crawler Optimized)
+
+All pages and blog posts are available as clean markdown for AI systems and crawlers.
+
+### Static Pages (Markdown)
+- Home: https://www.housearchitectureandconstruction.com/content/home.md
+- About: https://www.housearchitectureandconstruction.com/content/about.md
+- Services: https://www.housearchitectureandconstruction.com/content/services.md
+- Projects: https://www.housearchitectureandconstruction.com/content/projects.md
+- Contact: https://www.housearchitectureandconstruction.com/content/contact.md
+
+### Blog Posts (Markdown)
+Each blog post is available as markdown at: https://www.housearchitectureandconstruction.com/blog/{slug}/md
+
+Current posts:
+- https://www.housearchitectureandconstruction.com/blog/westchester-home-renovation-guide/md
+- https://www.housearchitectureandconstruction.com/blog/new-home-construction-westchester-ny/md
+- https://www.housearchitectureandconstruction.com/blog/second-story-addition-westchester-ny/md
+- https://www.housearchitectureandconstruction.com/blog/primary-suite-addition-scarsdale-ny/md
+
+New blog posts are published daily and are automatically available at /blog/{slug}/md.
+
 ## Frequently Asked Questions
 
 **Do you offer free consultations?**
