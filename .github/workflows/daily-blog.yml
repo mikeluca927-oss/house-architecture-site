@@ -71,6 +71,11 @@ print(json.dumps(obj, ensure_ascii=False, indent=2))
           " "$DATE")
 
           mkdir -p content/blog
+          # Skip if post already exists for today
+          if [ -f "content/blog/${DATE}.json" ]; then
+            echo "Post for ${DATE} already exists, skipping."
+            exit 0
+          fi
           echo "$POST_JSON" > "content/blog/${DATE}.json"
 
       - name: Commit and push
