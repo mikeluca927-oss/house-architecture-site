@@ -57,7 +57,7 @@ jobs:
               }]
             }")
 
-          POST_JSON=$(echo "$RESPONSE" | python3 -c "
+          POST_JSON=$(printf '%s' "$RESPONSE" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
 text = data['content'][0]['text']
