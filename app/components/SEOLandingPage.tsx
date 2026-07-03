@@ -41,11 +41,31 @@ export default function SEOLandingPage({
     ],
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.housearchitectureandconstruction.com',
+      },
+      // Google allows the final breadcrumb item to omit the URL — it refers
+      // to the current page.
+      { '@type': 'ListItem', position: 2, name: h1 },
+    ],
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}

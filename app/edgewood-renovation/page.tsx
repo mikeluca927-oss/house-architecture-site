@@ -51,6 +51,11 @@ export default function EdgewoodRenovationPage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.24}>
+            <p className="font-inter text-charcoal/70 leading-relaxed text-lg">
+              Every Edgewood project moves through the Village of Scarsdale Building Department, and we handle that process end to end — architectural drawings, permit applications, and municipal coordination are all done in-house. Because the same firm designs and builds the project, there is no gap between what gets drawn and what gets built: budgets are grounded in real construction knowledge from the first sketch, and schedules don't stall waiting on an outside architect's revisions.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.32}>
             <div className="mt-10">
               <Link
                 href="/contact"

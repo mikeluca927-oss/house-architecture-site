@@ -370,7 +370,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {[
-              { value: 99, suffix: '+', label: 'Homes Transformed', duration: 2400 },
+              { value: 100, suffix: '+', label: 'Homes Transformed', duration: 2400 },
               { value: 25, suffix: '+', label: 'Years of Experience', duration: 1800 },
               { value: 100, suffix: '%', label: 'Residential Focus', duration: 2000 },
               { value: 5, suffix: '★', label: 'Client Satisfaction', duration: 1200 },

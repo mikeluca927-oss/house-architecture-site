@@ -10,7 +10,10 @@ interface CountUpProps {
 }
 
 export default function CountUp({ end, suffix = '', duration = 2200, className = '' }: CountUpProps) {
-  const [count, setCount] = useState(0)
+  // Initialize at the final value so server-rendered HTML (read by search
+  // engines and AI crawlers) shows the real number, not 0. The animation
+  // counts up from 0 once the element scrolls into view in the browser.
+  const [count, setCount] = useState(end)
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
   const started = useRef(false)

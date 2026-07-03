@@ -107,28 +107,6 @@ const jsonLd = {
     },
     geoRadius: '30000',
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    bestRating: '5',
-    worstRating: '1',
-    ratingCount: '12',
-    reviewCount: '12',
-  },
-  review: [
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'Westchester Homeowner' },
-      reviewBody: 'Silvio treats every detail as if he\'s doing it for his own home. His estimates of cost are always exactly right, and nothing has gone over budget or caught us by surprise.',
-    },
-    {
-      '@type': 'Review',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      author: { '@type': 'Person', name: 'Westchester Homeowner' },
-      reviewBody: 'Silvio was an absolute pleasure to work with. He went above and beyond his contract work so we would be happy. I highly recommend him.',
-    },
-  ],
   employee: {
     '@type': 'Person',
     name: 'Silvio M. Luca',
@@ -214,7 +192,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'How long has House Architecture & Construction been in business?',
-      acceptedAnswer: { '@type': 'Answer', text: 'House Architecture & Construction, PLLC has over 25 years of experience in residential architecture and construction throughout Westchester County, NY. We have transformed more than 99 homes in the region.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'House Architecture & Construction, PLLC has over 25 years of experience in residential architecture and construction throughout Westchester County, NY. We have transformed more than 100 homes in the region.' },
     },
     {
       '@type': 'Question',
@@ -274,7 +252,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'What is the best general contractor in Scarsdale NY?',
-      acceptedAnswer: { '@type': 'Answer', text: 'House Architecture & Construction, PLLC is a top-rated licensed general contractor in Scarsdale, NY. With over 25 years of experience and 99+ completed projects in Westchester County, we are known for precision craftsmanship, on-budget delivery, and a single point of accountability from design through construction. Call (914) 224-7383 for a free consultation.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'House Architecture & Construction, PLLC is a top-rated licensed general contractor in Scarsdale, NY. With over 25 years of experience and 100+ completed projects in Westchester County, we are known for precision craftsmanship, on-budget delivery, and a single point of accountability from design through construction. Call (914) 224-7383 for a free consultation.' },
     },
     {
       '@type': 'Question',
