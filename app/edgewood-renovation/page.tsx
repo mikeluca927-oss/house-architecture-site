@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Edgewood Scarsdale Renovation & Architect | House Architecture & Construction',
+  title: 'Edgewood Scarsdale Renovation & Architect',
   description:
     'Home renovations, additions, and architectural design in the Edgewood neighborhood of Scarsdale, NY. Licensed architect and contractor Silvio M. Luca. Free in-home consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/edgewood-renovation' },

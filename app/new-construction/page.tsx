@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import CTABanner from '../components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'New Home Construction Westchester NY | House Architecture & Construction',
+  title: 'New Home Construction Westchester NY',
   description:
     'Custom new home design and construction throughout Westchester County. Site planning, architectural design, project management, and construction. Free consultations.',
   openGraph: {

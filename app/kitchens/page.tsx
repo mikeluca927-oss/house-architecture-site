@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import CTABanner from '../components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Kitchen Renovation Westchester NY | House Architecture & Construction',
+  title: 'Kitchen Renovation Westchester NY',
   description:
     'Custom kitchen remodeling services in Westchester County, NY. From custom cabinetry to complete kitchen redesigns. Free in-home consultations.',
   openGraph: {

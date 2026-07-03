@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Heathcote Scarsdale Renovation & Architect | House Architecture & Construction',
+  title: 'Heathcote Scarsdale Renovation & Architect',
   description:
     'Home renovations, additions, and architectural design in the Heathcote neighborhood of Scarsdale, NY. Licensed architect and contractor Silvio M. Luca. Free in-home consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/heathcote-renovation' },

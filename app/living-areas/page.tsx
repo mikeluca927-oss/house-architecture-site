@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import CTABanner from '../components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Living Area Renovation Westchester NY | House Architecture & Construction',
+  title: 'Living Area Renovation Westchester NY',
   description:
     'Custom living room, family room, and mudroom remodeling services in Westchester County, NY. Open-concept renovations, custom built-ins, and complete living area remodels. Free in-home consultations.',
   openGraph: {

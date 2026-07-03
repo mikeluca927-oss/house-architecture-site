@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import CTABanner from '../components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Residential Architecture Westchester NY | House Architecture & Construction',
+  title: 'Residential Architecture Westchester NY',
   description:
     'Licensed residential architect serving Westchester County, NY. Custom home design, renovation architecture, addition design, and construction documents. Free consultations.',
   openGraph: {
