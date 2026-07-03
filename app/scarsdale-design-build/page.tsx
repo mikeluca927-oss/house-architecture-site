@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Design Build Firm | House Architecture & Construction, PLLC',
+  title: 'Scarsdale Design Build Firm',
   description:
     'Scarsdale\'s premier design-build firm. Licensed architect and general contractor Silvio M. Luca handles design, permits, and construction under one roof. Free in-home consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-design-build' },

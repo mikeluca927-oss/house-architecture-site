@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Home Addition | House Architecture & Construction, PLLC',
+  title: 'Scarsdale Home Addition',
   description:
     'Home additions in Scarsdale, NY designed and built by a licensed architect and contractor. Second stories, primary suites, rear additions, and dormers. Free in-home consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-addition' },

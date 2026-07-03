@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale General Contractor | House Architecture & Construction, PLLC',
+  title: 'Scarsdale General Contractor',
   description:
     'Licensed general contractor in Scarsdale, NY. Silvio M. Luca — NY State licensed architect and contractor — manages all trades for renovations, additions, and new construction. Free consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-general-contractor' },

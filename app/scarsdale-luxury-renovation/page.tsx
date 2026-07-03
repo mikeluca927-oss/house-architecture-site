@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Luxury Home Renovation | House Architecture & Construction, PLLC',
+  title: 'Scarsdale Luxury Home Renovation',
   description:
     'High-end luxury home renovations in Scarsdale, NY. Whole-home transformations, primary suites, designer kitchens, and architectural additions by licensed architect Silvio M. Luca.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-luxury-renovation' },

@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Colonial Renovation | House Architecture & Construction, PLLC',
+  title: 'Scarsdale Colonial Renovation',
   description:
     'Colonial home renovation specialists in Scarsdale, NY. Additions, open-concept conversions, kitchen and bathroom remodels for Scarsdale Colonials. Licensed architect and contractor.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-colonial-renovation' },

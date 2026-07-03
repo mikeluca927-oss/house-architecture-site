@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import SEOLandingPage from '../components/SEOLandingPage'
 
 export const metadata: Metadata = {
-  title: 'Bronxville Home Renovation | House Architecture & Construction, PLLC — Westchester NY',
+  title: 'Bronxville Home Renovation — Westchester NY',
   description:
     'Luxury home renovation in Bronxville, NY. Whole-home and partial renovations by a licensed architect and contractor. House Architecture & Construction, PLLC. Free in-home consultations. Call (914) 224-7383.',
   openGraph: {

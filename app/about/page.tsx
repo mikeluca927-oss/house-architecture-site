@@ -5,7 +5,7 @@ import CTABanner from '../components/CTABanner'
 import TestimonialCard from '../components/TestimonialCard'
 
 export const metadata: Metadata = {
-  title: 'Licensed Architect & Contractor | About House Architecture & Construction PLLC',
+  title: 'About Silvio M. Luca — Licensed Architect & Contractor',
   description:
     'Meet Silvio M. Luca — architect and builder, Pratt Institute graduate. House Architecture & Construction, PLLC serves Westchester County with master craftsmanship and timeless design.',
   openGraph: {

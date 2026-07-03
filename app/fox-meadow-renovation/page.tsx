@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Fox Meadow Scarsdale Renovation | House Architecture & Construction, PLLC',
+  title: 'Fox Meadow Scarsdale Renovation',
   description:
     'Home renovations, additions, and architectural design in the Fox Meadow neighborhood of Scarsdale, NY. Licensed architect and contractor Silvio M. Luca. Free consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/fox-meadow-renovation' },

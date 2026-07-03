@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import SEOLandingPage from '../components/SEOLandingPage'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Contractor | House Architecture & Construction, PLLC — Westchester NY',
+  title: 'Scarsdale Contractor — Westchester NY',
   description:
     'Licensed general contractor serving Scarsdale, NY. Renovations, additions, new construction, and remodeling by House Architecture & Construction, PLLC. Free in-home consultations. Call (914) 224-7383.',
   openGraph: {

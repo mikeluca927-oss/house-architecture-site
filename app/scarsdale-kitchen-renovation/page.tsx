@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Kitchen Renovation | House Architecture & Construction, PLLC',
+  title: 'Scarsdale Kitchen Renovation',
   description:
     'Custom kitchen renovations in Scarsdale, NY. Full kitchen remodels designed and built by a licensed architect and contractor. Free in-home consultation with no commitment required.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-kitchen-renovation' },

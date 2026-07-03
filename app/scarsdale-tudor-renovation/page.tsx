@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Scarsdale Tudor Renovation | House Architecture & Construction, PLLC',
+  title: 'Scarsdale Tudor Renovation',
   description:
     'Expert Tudor home renovation and restoration in Scarsdale, NY. Preserve original character while modernizing every system and interior. Licensed architect and contractor. Free consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/scarsdale-tudor-renovation' },

@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Greenacres Scarsdale Renovation | House Architecture & Construction, PLLC',
+  title: 'Greenacres Scarsdale Renovation',
   description:
     'Home renovations, additions, and architectural design in the Greenacres neighborhood of Scarsdale, NY. Licensed architect and contractor Silvio M. Luca. Free in-home consultation.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/greenacres-renovation' },

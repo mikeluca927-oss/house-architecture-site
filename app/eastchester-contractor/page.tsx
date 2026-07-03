@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner'
 import ScrollReveal from '../components/ScrollReveal'
 
 export const metadata: Metadata = {
-  title: 'Eastchester Contractor | House Architecture & Construction, PLLC',
+  title: 'Eastchester Contractor',
   description:
     'Licensed general contractor and architect based in Eastchester, NY at 33 Ridge Street. Renovations, additions, kitchens, bathrooms, and new construction. Free in-home consultation. Call (914) 224-7383.',
   alternates: { canonical: 'https://www.housearchitectureandconstruction.com/eastchester-contractor' },

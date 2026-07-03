@@ -3,7 +3,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact | House Architecture & Construction, PLLC — Free Consultation',
+  title: 'Contact — Free Consultation',
   description:
     'Contact House Architecture & Construction, PLLC for a free in-home consultation. Serving all of Westchester County, NY. Call (914) 224-7383 or send a message online.',
   openGraph: {
