@@ -90,6 +90,7 @@ const RELATED_LINK_RULES: Array<{ match: RegExp; label: string; href: string }> 
   { match: /restoration|historic|tudor|colonial/, label: 'Historic Restorations', href: '/restorations' },
   { match: /architect/, label: 'Architecture Services', href: '/architecture' },
   { match: /contractor/, label: 'Westchester Renovation Contractor', href: '/westchester-renovation-contractor' },
+  { match: /eastchester/, label: 'Eastchester Contractor', href: '/eastchester-contractor' },
   { match: /scarsdale/, label: 'Scarsdale Home Renovation', href: '/scarsdale-home-renovation' },
   { match: /bronxville/, label: 'Bronxville Home Renovation', href: '/bronxville-home-renovation' },
   { match: /larchmont/, label: 'Larchmont Luxury Renovation', href: '/larchmont-luxury-renovation' },

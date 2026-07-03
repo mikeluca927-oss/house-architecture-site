@@ -13,6 +13,7 @@ const serviceLinks = [
 ]
 
 const seoLinks = [
+  { label: 'Eastchester Contractor', href: '/eastchester-contractor' },
   { label: 'Scarsdale Architect', href: '/scarsdale-architect' },
   { label: 'Scarsdale Contractor', href: '/scarsdale-contractor' },
   { label: 'Scarsdale Design-Build', href: '/scarsdale-design-build' },
