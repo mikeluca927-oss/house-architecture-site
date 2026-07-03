@@ -17,71 +17,12 @@ jobs:
       - name: Generate blog post via Claude API
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          DATE=$(date +%Y-%m-%d)
-
-          TOPICS=(
-            "home addition Westchester NY"
-            "kitchen renovation Scarsdale NY"
-            "general contractor Westchester County NY"
-            "residential architect Westchester NY"
-            "bathroom remodel Westchester County"
-            "custom home construction Westchester NY"
-            "historic home restoration Westchester NY"
-            "primary suite addition Scarsdale NY"
-            "home renovation cost Westchester NY"
-            "new home construction Eastchester NY"
-            "home renovation permits Westchester NY"
-            "colonial home renovation Westchester NY"
-            "open concept renovation Westchester NY"
-            "second story addition Westchester NY"
-            "home remodeling Bronxville NY"
-            "architect vs contractor Westchester NY"
-            "luxury home renovation Scarsdale NY"
-            "kitchen addition Westchester County"
-            "mudroom addition Westchester NY"
-            "basement renovation Westchester NY"
-          )
-          TOPIC=${TOPICS[$RANDOM % ${#TOPICS[@]}]}
-
-          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
-            -H "x-api-key: $ANTHROPIC_API_KEY" \
-            -H "anthropic-version: 2023-06-01" \
-            -H "content-type: application/json" \
-            -d "{
-              \"model\": \"claude-haiku-4-5-20251001\",
-              \"max_tokens\": 1500,
-              \"messages\": [{
-                \"role\": \"user\",
-                \"content\": \"Write a blog post for House Architecture & Construction, PLLC. Target keyword: '$TOPIC'.\\n\\nFACTS — use only these, do not invent anything:\\n- Design-build firm: principal Silvio M. Luca is both a licensed NY State architect and licensed general contractor. He runs every project personally.\\n- Services: home renovations, additions, second-story additions, kitchen remodels, bathroom renovations, primary suite additions, historic restorations, open-concept conversions, custom new construction.\\n- Based in Eastchester NY, serves all of Westchester County — Scarsdale, Bronxville, Larchmont, Mamaroneck, Pelham, Pelham Manor, Rye, Harrison, White Plains, New Rochelle, Tuckahoe, Eastchester, Ardsley, Dobbs Ferry, Hastings-on-Hudson, Tarrytown, and Ossining.\\n- Do NOT say the firm specializes exclusively in any one town or service. Do NOT include dollar amounts or cost estimates.\\n- Every Westchester municipality has its own building department and permit process — this is normal and not unique to any single town. Never imply one town's permitting is uniquely separate or different from the rest.\\n- EVERY post must mention at least 6 of these towns naturally within the content — not as a list dump, but woven into sentences where they make sense (e.g. 'whether your home is in Scarsdale, Larchmont, or Bronxville').\\n- SEO KEYWORDS to work in naturally throughout every post (use at least 4): architect Westchester NY, general contractor Westchester, design-build Westchester, home renovation Westchester NY, licensed architect NY, residential architect Scarsdale, home addition Westchester, custom home Westchester County. Use them in sentences — never as a keyword dump.\\n\\nWRITING RULES — this is non-negotiable:\\n- Write like a real person talking to a homeowner, not like a brochure.\\n- Short sentences. One idea per paragraph. Say what you mean.\\n- Never use: seamlessly, robust, cutting-edge, game-changer, delve into, unpack, navigate the complexities, holistic, leverage, synergies, moreover, furthermore, ultimately, at the end of the day, foster a culture of, powerful opportunity, effortlessly.\\n- No transition words to start sentences (Moreover, Additionally, Furthermore, That said).\\n- No generic conclusions that could apply to any company. Be specific.\\n- Read each sentence: if a real person wouldn't say it out loud, rewrite it.\\n\\nReturn ONLY a valid JSON object with: title (string), slug (url-friendly, no spaces), excerpt (1-2 sentences, plain English), content (HTML with <p> and <h2> tags, 450-600 words). End with a call to action to call (914) 224-7383 for a free consultation. No markdown, no code fences — raw JSON only.\"
-              }]
-            }")
-
-          POST_JSON=$(printf '%s' "$RESPONSE" | python3 -c "
-import sys, json
-data = json.load(sys.stdin)
-text = data['content'][0]['text']
-# Extract just the JSON object — find first { and last }
-start = text.index('{')
-end = text.rindex('}') + 1
-text = text[start:end]
-obj = json.loads(text)
-obj['date'] = sys.argv[1]
-print(json.dumps(obj, ensure_ascii=False, indent=2))
-          " "$DATE")
-
-          mkdir -p content/blog
-          # Skip if post already exists for today
-          if [ -f "content/blog/${DATE}.json" ]; then
-            echo "Post for ${DATE} already exists, skipping."
-            exit 0
-          fi
-          echo "$POST_JSON" > "content/blog/${DATE}.json"
+        run: python3 scripts/generate_blog_post.py "$(date +%Y-%m-%d)"
 
       - name: Commit and push
         run: |
           git config user.name "HAC Blog Bot"
           git config user.email "bot@housearchitectureandconstruction.com"
           git add content/blog/
-          git diff --staged --quiet || git commit -m "Blog: daily post $(date +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "Blog: $(date +%Y-%m-%d)"
           git push
