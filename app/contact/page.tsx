@@ -117,16 +117,48 @@ export default function ContactPage() {
                 <div className="bg-charcoal/[0.03] border border-charcoal/10 p-6">
                   <p className="font-inter text-xs tracking-widest uppercase text-charcoal/40 mb-1">Hours</p>
                   <p className="font-inter text-sm text-charcoal/70">
-                    Monday – Friday: 8:00 AM – 6:00 PM
+                    Calls &amp; Consultations: Every Day, 8:00 AM – 6:00 PM
                     <br />
-                    Saturday: By appointment
-                    <br />
-                    Sunday: Closed
+                    On-Site Work: Monday – Saturday
                   </p>
                 </div>
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      <div className="border-t border-charcoal/10" />
+
+      {/* Map */}
+      <section className="bg-cream" aria-label="Office location map">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <ScrollReveal>
+            <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+              <h2 className="font-cormorant text-3xl md:text-4xl text-charcoal leading-tight">
+                33 Ridge Street, Eastchester, NY 10709
+              </h2>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=33+Ridge+Street+Eastchester+NY+10709"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-inter text-xs tracking-[0.2em] uppercase text-gold hover:text-gold/80 transition-colors whitespace-nowrap"
+              >
+                Get Directions &rarr;
+              </a>
+            </div>
+            <div className="border border-charcoal/10">
+              <iframe
+                title="House Architecture & Construction, PLLC office location"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-73.8220%2C40.9433%2C-73.8100%2C40.9513&layer=mapnik&marker=40.9473%2C-73.8160"
+                width="100%"
+                height="420"
+                style={{ border: 0, display: 'block' }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

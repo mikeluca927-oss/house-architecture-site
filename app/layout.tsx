@@ -82,8 +82,8 @@ const jsonLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 41.0534,
-    longitude: -73.8088,
+    latitude: 40.9473,
+    longitude: -73.8160,
   },
   areaServed: [
     { '@type': 'City', name: 'Eastchester', containedInPlace: { '@type': 'State', name: 'New York' } },
@@ -103,8 +103,8 @@ const jsonLd = {
     '@type': 'GeoCircle',
     geoMidpoint: {
       '@type': 'GeoCoordinates',
-      latitude: 41.0534,
-      longitude: -73.8088,
+      latitude: 40.9473,
+      longitude: -73.8160,
     },
     geoRadius: '30000',
   },
@@ -293,7 +293,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'How do I contact House Architecture & Construction?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Call us at (914) 224-7383, email Housearchitecture@msn.com, or fill out the contact form at housearchitectureandconstruction.com/contact. Our office is at 33 Ridge Street, Eastchester, NY 10709. We are available Monday–Friday 8AM–6PM and Saturday by appointment.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Call us at (914) 224-7383, email Housearchitecture@msn.com, or fill out the contact form at housearchitectureandconstruction.com/contact. Our office is at 33 Ridge Street, Eastchester, NY 10709. We take calls and schedule free consultations every day, 8AM–6PM, and perform on-site work Monday through Saturday.' },
     },
   ],
 }

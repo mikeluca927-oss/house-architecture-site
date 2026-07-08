@@ -14,9 +14,8 @@
 **Instagram:** @housearchitecture.pllc
 
 **Hours:**
-- Monday – Friday: 8:00 AM – 6:00 PM
-- Saturday: By appointment
-- Sunday: Closed
+- Calls & Free Consultations: Every day, 8:00 AM – 6:00 PM
+- On-Site Work: Monday – Saturday
 
 ---
 
