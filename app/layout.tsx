@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import NewsletterPopup from './components/NewsletterPopup'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -347,6 +348,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <NewsletterPopup />
       </body>
     </html>
   )
