@@ -38,6 +38,12 @@ export default function ScarsdaleArchitectPage() {
         "We offer free in-home consultations to Scarsdale homeowners. There is no commitment required — just an honest conversation about your home, your vision, and how we can help you realize it. Call us at (914) 224-7383 or complete the contact form to schedule your consultation.",
       ]}
       serviceLinks={serviceLinks}
+      relatedLinks={[
+        { label: 'Scarsdale Contractor', href: '/scarsdale-contractor' },
+        { label: 'Scarsdale Design-Build Firm', href: '/scarsdale-design-build' },
+        { label: 'Scarsdale Custom Home Builder', href: '/scarsdale-custom-home-builder' },
+        { label: 'Scarsdale New Construction', href: '/scarsdale-new-construction' },
+      ]}
       ctaHeadline="Scarsdale's Trusted Architecture & Construction Firm"
     />
   )

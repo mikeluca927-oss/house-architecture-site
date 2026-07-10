@@ -40,6 +40,14 @@ export default function ScarsdaleContractorPage() {
         "We are fully licensed in New York State and carry comprehensive general liability and workers' compensation insurance. We handle all permits and inspections required by the Village of Scarsdale. Free in-home consultations are available to Scarsdale homeowners — call (914) 224-7383 or contact us online to schedule yours.",
       ]}
       serviceLinks={serviceLinks}
+      relatedLinks={[
+        { label: 'Scarsdale Architect', href: '/scarsdale-architect' },
+        { label: 'Scarsdale General Contractor', href: '/scarsdale-general-contractor' },
+        { label: 'Scarsdale Design-Build Firm', href: '/scarsdale-design-build' },
+        { label: 'Scarsdale Home Renovation', href: '/scarsdale-home-renovation' },
+        { label: 'Scarsdale New Construction', href: '/scarsdale-new-construction' },
+        { label: 'Scarsdale Custom Home Builder', href: '/scarsdale-custom-home-builder' },
+      ]}
       ctaHeadline="Scarsdale's Premier Licensed Contractor"
     />
   )

@@ -8,6 +8,7 @@ interface SEOLandingPageProps {
   intro: string
   paragraphs: string[]
   serviceLinks: Array<{ label: string; href: string }>
+  relatedLinks?: Array<{ label: string; href: string }>
   ctaHeadline?: string
 }
 
@@ -17,6 +18,7 @@ export default function SEOLandingPage({
   intro,
   paragraphs,
   serviceLinks,
+  relatedLinks,
   ctaHeadline,
 }: SEOLandingPageProps) {
   const schema = {
@@ -128,6 +130,28 @@ export default function SEOLandingPage({
               </div>
             </div>
           </ScrollReveal>
+
+          {relatedLinks && relatedLinks.length > 0 && (
+            <ScrollReveal delay={0.48}>
+              <div className="mt-8 p-8 md:p-10 border border-charcoal/10">
+                <h2 className="font-cormorant text-2xl md:text-3xl text-charcoal mb-6">
+                  More {city} Resources
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-4">
+                  {relatedLinks.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="font-inter text-sm text-charcoal/60 hover:text-gold transition-colors flex items-center gap-2"
+                    >
+                      <span className="w-1.5 h-1.5 bg-gold rounded-full inline-block flex-shrink-0" aria-hidden="true" />
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
         </div>
       </section>
 

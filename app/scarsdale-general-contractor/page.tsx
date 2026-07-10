@@ -54,6 +54,46 @@ export default function ScarsdalGeneralContractorPage() {
           </ScrollReveal>
         </div>
       </section>
+      <section className="py-16 bg-cream">
+        <div className="max-w-4xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="p-8 md:p-10 border border-charcoal/10">
+              <h2 className="font-cormorant text-2xl md:text-3xl text-charcoal mb-6">More Scarsdale Resources</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-4">
+              <Link
+                href="/scarsdale-contractor"
+                className="font-inter text-sm text-charcoal/60 hover:text-gold transition-colors flex items-center gap-2"
+              >
+                <span className="w-1.5 h-1.5 bg-gold rounded-full inline-block flex-shrink-0" aria-hidden="true" />
+                Scarsdale Contractor
+              </Link>
+              <Link
+                href="/scarsdale-design-build"
+                className="font-inter text-sm text-charcoal/60 hover:text-gold transition-colors flex items-center gap-2"
+              >
+                <span className="w-1.5 h-1.5 bg-gold rounded-full inline-block flex-shrink-0" aria-hidden="true" />
+                Scarsdale Design-Build Firm
+              </Link>
+              <Link
+                href="/scarsdale-home-renovation"
+                className="font-inter text-sm text-charcoal/60 hover:text-gold transition-colors flex items-center gap-2"
+              >
+                <span className="w-1.5 h-1.5 bg-gold rounded-full inline-block flex-shrink-0" aria-hidden="true" />
+                Scarsdale Home Renovation
+              </Link>
+              <Link
+                href="/scarsdale-addition"
+                className="font-inter text-sm text-charcoal/60 hover:text-gold transition-colors flex items-center gap-2"
+              >
+                <span className="w-1.5 h-1.5 bg-gold rounded-full inline-block flex-shrink-0" aria-hidden="true" />
+                Scarsdale Home Addition
+              </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <CTABanner headline="Scarsdale's Trusted General Contractor" subhead="Call (914) 224-7383 — licensed, insured, and ready to start." />
     </>
   )

@@ -40,3 +40,9 @@ yarn-error.log*
 /IMG_*
 /Image*
 .claude/
+
+# python
+__pycache__/
+
+# typescript
+*.tsbuildinfo
