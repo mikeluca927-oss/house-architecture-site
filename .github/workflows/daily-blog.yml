@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 12 * * *'  # 12 PM UTC = 8 AM ET daily
   workflow_dispatch:       # Allow manual trigger from GitHub Actions tab
+    inputs:
+      date:
+        description: 'Date to generate a post for (YYYY-MM-DD). Leave blank for today; use this to backfill a missed day.'
+        required: false
+        type: string
 
 jobs:
   generate-post:
@@ -17,7 +22,8 @@ jobs:
       - name: Generate blog post via Claude API
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 scripts/generate_blog_post.py "$(date +%Y-%m-%d)"
+          POST_DATE: ${{ github.event.inputs.date }}
+        run: python3 scripts/generate_blog_post.py "${POST_DATE:-$(date +%Y-%m-%d)}"
 
       - name: Commit and push
         run: |

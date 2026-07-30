@@ -161,6 +161,7 @@ WRITING RULES — this is non-negotiable:
 - Write like a real person talking to a homeowner, not like a brochure.
 - Short sentences. One idea per paragraph. Say what you mean.
 - Never use: {forbidden}.
+- Never use an em dash (—) or en dash (–) anywhere in the post. Use a period, comma, or parentheses instead.
 - No transition words to start sentences (Moreover, Additionally, Furthermore, That said).
 - No generic conclusions that could apply to any company. Be specific.
 - No bullet-point marketing lists inside paragraphs (e.g. "Kitchen Remodeling: ... Bathroom Renovations: ..."). Write in flowing prose instead.
@@ -257,6 +258,10 @@ def main():
         sys.exit(1)
 
     slug = re.sub(r"[^a-z0-9-]", "", fields["slug"].lower().replace(" ", "-"))
+
+    # Belt-and-suspenders: strip any em/en dash the model slips in despite the prompt rule.
+    for field in ("title", "excerpt", "content"):
+        fields[field] = fields[field].replace("—", ", ").replace("–", "-")
 
     link_href, link_label = pick_internal_link(topic)
     content = fields["content"].rstrip()
