@@ -173,7 +173,7 @@ TITLE: <the post title>
 SLUG: <url-friendly-slug-no-spaces>
 EXCERPT: <1-2 plain English sentences>
 CONTENT:
-<the full post body as HTML using only <p> and <h2> tags, 450-600 words, ending with a call to action to call (914) 224-7383 for a free consultation>
+<the full post body as HTML, 450-600 words, ending with a call to action to call (914) 224-7383 for a free consultation. REQUIRED structure: at least 3 <h2> subheadings breaking the post into clear sections (never start the post with an <h2>, open with 1-2 <p> paragraphs first), each section followed by 1-3 <p> paragraphs of body text. Wrap 2-4 key phrases per post in <strong> tags for emphasis (a credential, a specific benefit, a call to action), not entire sentences, just short phrases. Use only <p>, <h2>, and <strong> tags, nothing else>
 """
 
 
@@ -249,11 +249,24 @@ def main():
 
     prompt = PROMPT_TEMPLATE.format(topic=topic, forbidden=", ".join(FORBIDDEN_WORDS), town_rule=town_rule)
 
-    text = call_claude(prompt)
-    fields = parse_fields(text)
+    fields = None
+    for attempt in range(2):
+        text = call_claude(prompt)
+        candidate = parse_fields(text)
 
-    if not fields["title"] or not fields["slug"] or not fields["content"]:
-        print("ERROR: failed to parse required fields from model output", file=sys.stderr)
+        if not candidate["title"] or not candidate["slug"] or not candidate["content"]:
+            print(f"WARN (attempt {attempt + 1}): failed to parse required fields from model output", file=sys.stderr)
+            continue
+
+        if len(re.findall(r"<h2", candidate["content"])) < 3:
+            print(f"WARN (attempt {attempt + 1}): fewer than 3 <h2> subheadings in model output", file=sys.stderr)
+            continue
+
+        fields = candidate
+        break
+
+    if fields is None:
+        print("ERROR: model output failed validation after 2 attempts", file=sys.stderr)
         print(text, file=sys.stderr)
         sys.exit(1)
 
