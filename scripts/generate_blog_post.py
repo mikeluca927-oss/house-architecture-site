@@ -262,6 +262,10 @@ def main():
             print(f"WARN (attempt {attempt + 1}): fewer than 3 <h2> subheadings in model output", file=sys.stderr)
             continue
 
+        if len(re.findall(r"<strong", candidate["content"])) < 1:
+            print(f"WARN (attempt {attempt + 1}): no <strong> emphasis in model output", file=sys.stderr)
+            continue
+
         fields = candidate
         break
 
