@@ -137,6 +137,50 @@ def pick_internal_link(topic: str) -> tuple[str, str]:
             return href, label
     return "/renovations", "home renovations"
 
+
+def existing_slugs() -> set[str]:
+    """Slugs of every post already committed, so a new post can never collide
+    with one already live (two posts sharing a slug make the blog index show
+    the same article twice and the shared URL silently serves only one)."""
+    dir_path = os.path.join("content", "blog")
+    slugs = set()
+    if not os.path.isdir(dir_path):
+        return slugs
+    for fname in os.listdir(dir_path):
+        if not fname.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(dir_path, fname), encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        if data.get("slug"):
+            slugs.add(data["slug"])
+    return slugs
+
+
+def recent_topics(days: int = 30) -> set[str]:
+    """Topics used in the last `days` posts (filenames are YYYY-MM-DD.json,
+    one per day, so the most recent N filenames are the most recent N days),
+    so the same subject isn't picked again right away even when it would
+    generate a different-enough slug."""
+    dir_path = os.path.join("content", "blog")
+    topics = set()
+    if not os.path.isdir(dir_path):
+        return topics
+    for fname in sorted(os.listdir(dir_path), reverse=True)[:days]:
+        if not fname.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(dir_path, fname), encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        if data.get("topic"):
+            topics.add(data["topic"])
+    return topics
+
+
 FORBIDDEN_WORDS = [
     "seamlessly", "robust", "cutting-edge", "game-changer", "delve into",
     "unpack", "navigate the complexities", "holistic", "leverage",
@@ -233,24 +277,38 @@ def main():
         return
 
     import random
-    topic = sys.argv[2] if len(sys.argv) > 2 else random.choice(TOPICS)
 
-    is_scarsdale = "scarsdale" in topic.lower() or any(
-        n in topic.lower() for n in ("heathcote", "edgewood", "fox meadow", "greenacres")
-    )
-    town_rule = (
-        "This post is about Scarsdale specifically — keep Scarsdale as the clear, "
-        "consistent focus throughout. You may still mention 1-2 nearby towns in "
-        "passing for context, but do not dilute the post across many towns."
-        if is_scarsdale
-        else "EVERY post must mention at least 6 of these towns naturally within "
-        "the content — not as a list dump, but woven into sentences where they make sense."
-    )
-
-    prompt = PROMPT_TEMPLATE.format(topic=topic, forbidden=", ".join(FORBIDDEN_WORDS), town_rule=town_rule)
+    taken_slugs = existing_slugs()
+    forced_topic = sys.argv[2] if len(sys.argv) > 2 else None
+    avoid = recent_topics() if forced_topic is None else set()
+    pool = [t for t in TOPICS if t not in avoid] or list(TOPICS)
 
     fields = None
-    for attempt in range(2):
+    slug = None
+    topic = None
+    tried_topics = set()
+    max_attempts = 4
+    for attempt in range(max_attempts):
+        if forced_topic is not None:
+            topic = forced_topic
+        else:
+            choices = [t for t in pool if t not in tried_topics] or pool
+            topic = random.choice(choices)
+        tried_topics.add(topic)
+
+        is_scarsdale = "scarsdale" in topic.lower() or any(
+            n in topic.lower() for n in ("heathcote", "edgewood", "fox meadow", "greenacres")
+        )
+        town_rule = (
+            "This post is about Scarsdale specifically — keep Scarsdale as the clear, "
+            "consistent focus throughout. You may still mention 1-2 nearby towns in "
+            "passing for context, but do not dilute the post across many towns."
+            if is_scarsdale
+            else "EVERY post must mention at least 6 of these towns naturally within "
+            "the content — not as a list dump, but woven into sentences where they make sense."
+        )
+        prompt = PROMPT_TEMPLATE.format(topic=topic, forbidden=", ".join(FORBIDDEN_WORDS), town_rule=town_rule)
+
         text = call_claude(prompt)
         candidate = parse_fields(text)
 
@@ -266,15 +324,19 @@ def main():
             print(f"WARN (attempt {attempt + 1}): no <strong> emphasis in model output", file=sys.stderr)
             continue
 
+        candidate_slug = re.sub(r"[^a-z0-9-]", "", candidate["slug"].lower().replace(" ", "-"))
+        if candidate_slug in taken_slugs:
+            print(f"WARN (attempt {attempt + 1}): slug '{candidate_slug}' (topic '{topic}') already exists, retrying with a new topic", file=sys.stderr)
+            continue
+
         fields = candidate
+        slug = candidate_slug
         break
 
     if fields is None:
-        print("ERROR: model output failed validation after 2 attempts", file=sys.stderr)
+        print(f"ERROR: model output failed validation after {max_attempts} attempts", file=sys.stderr)
         print(text, file=sys.stderr)
         sys.exit(1)
-
-    slug = re.sub(r"[^a-z0-9-]", "", fields["slug"].lower().replace(" ", "-"))
 
     # Belt-and-suspenders: strip any em/en dash the model slips in despite the prompt rule.
     for field in ("title", "excerpt", "content"):
@@ -290,6 +352,7 @@ def main():
         "date": date,
         "excerpt": fields["excerpt"],
         "content": content,
+        "topic": topic,
     }
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
